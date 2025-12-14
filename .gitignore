@@ -1,0 +1,28 @@
+# Agents files that are used as soft links to `AGENTS.md` and `.agentsignore`
+CLAUDE.md
+.claude
+.claudeignore
+GEMINI.md
+.gemini
+.geminiignore
+.specify
+.codex
+
+# Encription files
+*.enc
+
+# Backup and temp files
+*.bak
+*.backup
+*.Backup
+*.back
+*backup*
+*tmp*
+*temp*
+
+# MCP Servers
+.global.claude.config.json
+.playwright-mcp
+.mcp.json.*
+# playwright.sh
+

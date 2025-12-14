@@ -1,0 +1,27 @@
+[
+{
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/pages/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/pages/contact.html"
+    }
+  ]
+},
+{
+  "rewrites": [
+    {
+      "source": "/:path",
+      "destination": "/:path.html"
+    },
+    {
+      "source": "/:path/:slug",
+      "destination": "/:path/:slug.html"
+    }
+  ]
+}
+]
+
