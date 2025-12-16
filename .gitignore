@@ -10,6 +10,7 @@ GEMINI.md
 .geminiignore
 .specify
 .codex
+.aiexclude
 
 # Encription files
 *.enc
