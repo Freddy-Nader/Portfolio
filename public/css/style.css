@@ -60,7 +60,6 @@ body {
 /* Layout Container */
 section {
     max-width: 680px;
-    /* Optimal reading width */
     margin: 0 auto var(--spacing-xl) auto;
 }
 
