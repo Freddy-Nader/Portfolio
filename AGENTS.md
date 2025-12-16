@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -35,3 +35,7 @@ This is a static HTML site with no build process. To develop:
 
 - All configuration changes should be made to `.env.example` files, never to `.env` directly (per global CLAUDE.md)
 - The site uses clean URL routing, so pages should be created as `.html` files but accessed without the extension
+
+## User Preferences
+
+- **Keep it simple**: Always keep all code in this project as simple as possible. Avoid overengineering or unnecessary complexity.

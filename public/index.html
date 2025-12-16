@@ -1,11 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ANZ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+    <!-- KaTeX start -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+        integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    <!-- KaTeX end -->
 </head>
+
 <body>
-    
+    <header>
+        <button id="theme-toggle" aria-label="Toggle dark mode" aria-keyshortcuts="l">
+            <!-- Sun Icon -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+            </svg>
+            <!-- Moon Icon -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+            </svg>
+        </button>
+        <ul>
+            <li><a class="btn" href="#me">Me</a></li>
+            <li>
+                <p>/</p>
+            </li>
+            <li><a class="btn" href="#experiments">Experiments</a></li>
+            <li>
+                <p>/</p>
+            </li>
+            <li><a class="btn" href="#words">Words</a></li>
+            <li>
+                <p>/</p>
+            </li>
+            <li><a class="btn" href="#experience">Experience</a></li>
+            <li>
+                <p>/</p>
+            </li>
+            <li><a class="btn" href="cv/">CV</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <h1 id="me">Hi, I'm Freddy</h1>
+        <p>I am a Mexican Computer Science student.</p>
+        <p>I <em>love</em> pure math, programming, and beautiful things.</p>
+        <p><em>Curiosity</em> and <em>passion</em> are my driving factors in everything I do.</p>
+        <p>I like to learn new things, such as languages.</p>
+        <p>As Steve Jobs <a href="https://putsomethingback.stevejobsarchive.com/" target="_blank">put it</a>, I also
+            want to put something back.</p>
+        <p>You can follow me on
+            <a href="https://www.instagram.com/alfredo_nader/" target="_blank">Instagram</a>,
+            <a href="https://www.linkedin.com/in/alfredo-nader-547a45255/" target="_blank">LinkedIn</a>, and
+            <a href="https://github.com/Freddy-Nader/" target="_blank">GitHub</a>. I read every
+            <a href="mailto:alfredonaderz@gmail.com">email</a>.
+        </p>
+        <p><a href="cv/">See</a> or <a href="cv/cv.pdf">download</a> my CV.</p>
+    </section>
+
+    <section>
+        <h1 id="experiments">Experiments</h1>
+
+        <div class="block">
+            <h3>QuickGrading</h3>
+            <p>Teachers (at all levels) often have many administrative responsibilities. Sometimes, these administrative
+                responsibilities can lead to a decline in the quality of their teaching. I am building several software
+                tools so that teachers can focus their time and energy on what matters: providing a quality education.
+                <em>Teaching should be about teaching, not about managing.</em>
+            </p>
+        </div>
+
+        <div class="block">
+            <h3>Ampl</h3>
+            <p>AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for something
+                you're not getting the most out of. That's why I am developing <em>Ampl</em>. It lets you use all AI
+                models
+                with a pay-as-you-go pricing model, so that you stop paying for what you're not using!</p>
+        </div>
+    </section>
+
+    <!-- <section>
+        <h1 id="websites">Websites</h1> -->
+    <!-- (show logos or previews) -->
+    <!-- <ul>
+            <li>MODO</li>
+            <li>mau nader</li>
+            <li>Mauricio Nader Piano</li>
+            <li>Creando Orden</li>
+            <li>La Cadena</li>
+        </ul>
+    </section> -->
+
+    <section>
+        <h1 id="words">Words</h1>
+
+        <div class="block">
+            <h3>Closed-Form Formula for the Partition Function and Related Functions</h3>
+            <p>Since Euler and his peers started working on <a href="https://en.wikipedia.org/wiki/Integer_partition"
+                    target="_blank">integer partitions</a>, no one
+                had been able to develop a formula for the <a
+                    href="https://en.wikipedia.org/wiki/Partition_function_(number_theory)" target="_blank">number
+                    of partitions of an integer number</a>, $p(n)$. In a 29-page paper <a
+                    href="https://arxiv.org/abs/2401.04026" target="_blank">published</a> as a preprint on <a
+                    href="https://arxiv.org/">arXiv</a>, I develop
+                a formula for
+                $p(n)$ using combinatorial methods. The methods used have implications over other similar functions,
+                such as
+                <a href="https://en.wikipedia.org/wiki/Spt_function" target="_blank">Andrews' smallest parts (spt)
+                    function</a>, and new
+                identities for <a href="https://en.wikipedia.org/wiki/Jordan%27s_totient_function"
+                    target="_blank">Jordan's
+                    totient
+                    function</a> of second order, <a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function"
+                    target="_blank">Euler's
+                    totient function</a>, and <a href="https://en.wikipedia.org/wiki/Dedekind_psi_function"
+                    target="_blank">Dedekind's psi
+                    function</a>.
+            </p>
+        </div>
+
+        <p><a class="btn" href="words/"><strong>See more</strong></a></p>
+    </section>
+
+    <section>
+        <h1 id="experience">Experience</h1>
+
+        <!-- 
+        Presentation ideas:
+        1. Make it look as a TOC, with the activity on the left and the year on the right (instead of the page)
+        2. Scrollable timeline
+        -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I participate on <a href="https://educa.banxico.org.mx/contactobanxico/" target="_blank">Premio
+                            Contacto
+                            Banxico</a></td>
+                    <td>dec 2021</td>
+                </tr>
+                <tr>
+                    <td>I intern for a month at <a href="https://www.ericsson.com/" target="_blank">Ericsson</a></td>
+                    <td>nov 2022</td>
+                </tr>
+                <tr>
+                    <td>I win first place of Alan Turing National Programming Contest, and get awarded with a 70%
+                        scholarship to study CS at <a href="https://www.anahuac.mx/" target="_blank">Anáhuac
+                            University</a> in Mexico
+                        City</td>
+                    <td>dec 2022</td>
+                </tr>
+                <tr>
+                    <td>I graduate from <a href="https://www.nordangliaeducation.com/eton-school-mexico"
+                            target="_blank">ETON School</a></td>
+                    <td>jun 2023</td>
+                </tr>
+                <tr>
+                    <td>I start my CS career</td>
+                    <td>aug 2023</td>
+                </tr>
+                <tr>
+                    <td>I <a href="https://arxiv.org/abs/2401.04026" target="_blank">publish</a> my first math paper at
+                        ArXiV, and
+                        provide a closed-form formula for the <a
+                            href="https://en.wikipedia.org/wiki/Partition_function_(number_theory)"
+                            target="_blank">Partition
+                            Function</a></td>
+                    <td>jan 2024</td>
+                </tr>
+                <tr>
+                    <td>I work at Mindnic—a social listening company—as a Data Analyst</td>
+                    <td>nov 2024</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </body>
+
 </html>
