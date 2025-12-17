@@ -1,3 +1,14 @@
+const redirect = (targetUrl, fallbackUrl = '../404.html') => {
+    fetch(targetUrl, { mode: 'no-cors', method: 'HEAD' })
+        .then(() => {
+            window.location.href = targetUrl;
+        })
+        .catch((error) => {
+            console.error("Redirection failed:", error);
+            window.location.href = fallbackUrl;
+        });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
