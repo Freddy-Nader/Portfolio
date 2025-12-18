@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/404.css">
     <script src="js/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HPC1ETJ35"></script>
+    <script src="js/gtag.js"></script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script>
         // Immediately check for saved user preference or system preference to apply theme
         (function () {
@@ -18,42 +25,14 @@
             }
         })();
     </script>
-    <style>
-        body {
-            /* Override global layout styles for this specific page to ensure centering and no scroll */
-            margin: 0;
-            padding: 1rem;
-            /* Small padding for mobile safety */
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 8rem;
-            /* Big 404 text */
-            margin: 0;
-            line-height: 1;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-top: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .btn {
-            transform: none;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS2F5Q3W" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <h1>404</h1>
     <p>This page was not found.</p>
     <a class="btn" href="index.html">Go Home</a>

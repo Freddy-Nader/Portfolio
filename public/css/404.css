@@ -1,0 +1,31 @@
+body {
+    /* Override global layout styles for this specific page to ensure centering and no scroll */
+    margin: 0;
+    padding: 1rem;
+    /* Small padding for mobile safety */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 8rem;
+    /* Big 404 text */
+    margin: 0;
+    line-height: 1;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.btn {
+    transform: none;
+}

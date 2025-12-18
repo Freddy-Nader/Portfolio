@@ -1,3 +1,6 @@
+# Vercel
+.vercel
+
 # DS_Store
 .DS_Store
 
@@ -29,4 +32,3 @@ GEMINI.md
 .playwright-mcp
 .mcp.json.*
 # playwright.sh
-.vercel
