@@ -57,6 +57,19 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Icons */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sun-icon,
+.moon-icon {
+    fill: currentColor;
+}
+
 /* Layout Container */
 section {
     max-width: 680px;
@@ -136,7 +149,7 @@ button {
 }
 
 .btn {
-    padding: 2px 4px;
+    padding: 2px 5px;
 }
 
 button:hover,
@@ -263,10 +276,42 @@ th:last-child {
     margin-bottom: var(--spacing-md);
 }
 
+/* External links */
+.external-link a {
+    border-bottom: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+}
+
+.external-link a:hover {
+    border-bottom: 1px solid var(--text-primary);
+    background-color: transparent;
+}
+
+.external-link a::after {
+    content: "";
+    /* width: 0;
+    margin-left: 0;
+    opacity: 0; */
+    height: 1em;
+    background-color: currentColor;
+    -webkit-mask: url('../img/external-link.svg') no-repeat center;
+    mask: url('../img/external-link.svg') no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: all 0.2s ease;
+    width: 1em;
+    margin-left: 0.4em;
+    opacity: 1;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     body {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
+        margin-top: 0;
     }
 
     h1 {
@@ -279,5 +324,9 @@ th:last-child {
 
     section {
         margin-bottom: var(--spacing-lg);
+    }
+
+    header {
+        display: none;
     }
 }

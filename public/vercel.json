@@ -1,12 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/:path",
-      "destination": "/:path.html"
-    },
-    {
-      "source": "/:path/:slug",
-      "destination": "/:path/:slug.html"
-    }
-  ]
+  "cleanUrls": true
 }
