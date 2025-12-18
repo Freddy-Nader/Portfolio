@@ -1,3 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build Output
+dist/
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+
 # Vercel
 .vercel
 
@@ -15,7 +26,7 @@ GEMINI.md
 .codex
 .aiexclude
 
-# Encription files
+# Encryption files
 *.enc
 
 # Backup and temp files
