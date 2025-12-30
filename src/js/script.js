@@ -1,4 +1,4 @@
-const redirect = (targetUrl, fallbackUrl = '../404.html') => {
+const redirect = (targetUrl, fallbackUrl = '/404.html') => {
     fetch(targetUrl, { mode: 'no-cors', method: 'HEAD' })
         .then(() => {
             window.location.href = targetUrl;
@@ -53,16 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle theme on click
     themeToggle.addEventListener('click', toggleTheme);
+});
 
-    // Toggle theme on 'l' key press
-    document.addEventListener('keydown', (e) => {
-        // Don't trigger if user is typing in an input or textarea
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-            return;
-        }
+// Toggle theme on 'l' key press
+document.addEventListener('keydown', (e) => {
+    // Don't trigger if user is typing in an input or textarea
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return;
+    }
 
-        if (e.key === 'l' || e.key === 'L') {
-            toggleTheme();
-        }
-    });
+    if (e.key === 'l' || e.key === 'L') {
+        toggleTheme();
+    }
 });
