@@ -1,4 +1,7 @@
-/* Tailwind */
+/*
+  Tailwind
+*/
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -132,27 +135,20 @@
 
 /* Variables */
 :root {
-  /* Color Palette */
   --bg-color: #0d0d0d;
-  /* Deep, almost black */
   --text-primary: #ededed;
-  /* High legibility off-white */
   --text-secondary: #a1a1a1;
   --border: #262626;
   --link-hover: rgba(255, 255, 255, 0.1);
   --btn-hover: var(--link-hover);
-
-  /* Typography */
   --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-  /* Spacing */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
 }
 
-[data-theme="light"] {
+.light {
   --bg-color: #f7f7f7;
   --text-primary: #111111;
   --text-secondary: #555555;
@@ -356,19 +352,20 @@ header a.btn {
   transition: transform 0.3s ease;
 }
 
-[data-theme="light"] #theme-toggle .moon-icon {
+
+.light #theme-toggle .moon-icon {
   display: none;
 }
 
-[data-theme="light"] #theme-toggle .sun-icon {
+.light #theme-toggle .sun-icon {
   display: block;
 }
 
-:root:not([data-theme="light"]) #theme-toggle .sun-icon {
+:root:not(.light) #theme-toggle .sun-icon {
   display: none;
 }
 
-:root:not([data-theme="light"]) #theme-toggle .moon-icon {
+:root:not(.light) #theme-toggle .moon-icon {
   display: block;
 }
 
@@ -437,8 +434,8 @@ th:last-child {
     opacity: 0; */
   height: 1em;
   background-color: currentColor;
-  -webkit-mask: url('../public/img/external-link.svg') no-repeat center;
-  mask: url('../public/img/external-link.svg') no-repeat center;
+  -webkit-mask: url('/img/external-link.svg') no-repeat center;
+  mask: url('/img/external-link.svg') no-repeat center;
   -webkit-mask-size: contain;
   mask-size: contain;
   transition: all 0.2s ease;
