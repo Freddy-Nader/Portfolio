@@ -1,17 +1,22 @@
-import { readFile } from "fs/promises";
-import sizeOf from "image-size";
-import NextImage from "next/image";
 import Link from "next/link";
-import { join } from "path";
 import type { ReactNode } from "react";
 import { Caption, withHeadingId } from "./utils";
 
 export function A({ children, className = "", href, ...props }: { children: React.ReactNode; className?: string; href: string;[key: string]: any }) {
+  const classes = `
+    text-[#111111] dark:text-[#ededed]
+    border-b border-dashed border-[#111111] dark:border-[#ededed]
+    transition-all duration-200 ease-in-out
+    hover:bg-black/10 dark:hover:bg-white/10
+    hover:rounded-[4px]
+    ${className}
+  `;
+
   if (href[0] === "#" || href.substring(0, 7) === "mailto:" || href.substring(0, 4) === "tel:") {
     return (
       <a
         href={href}
-        className={`border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600 dark:text-white dark:border-stone-600 dark:hover:border-white ${className}`}
+        className={classes}
         {...props}
       >
         {children}
@@ -22,7 +27,7 @@ export function A({ children, className = "", href, ...props }: { children: Reac
     return (
       <Link
         href={href}
-        className={`border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600 dark:text-white dark:border-stone-600 dark:hover:border-white ${className}`}
+        className={classes}
         {...props}
       >
         {children}
@@ -35,7 +40,7 @@ export function A({ children, className = "", href, ...props }: { children: Reac
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600 dark:text-white dark:border-stone-600 dark:hover:border-white ${className}`}
+        className={classes}
         {...props}
       >
         {children}
@@ -46,7 +51,7 @@ export function A({ children, className = "", href, ...props }: { children: Reac
 
 export function Blockquote({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <blockquote className={`my-5 text-gray-500 pl-3 border-l-4 dark:border-gray-600 dark:text-gray-400 ${className}`}>
+    <blockquote className={`my-5 text-[#555555] dark:text-[#a1a1a1] pl-3 border-l-4 border-[#e0e0e0] dark:border-[#262626] ${className}`}>
       {children}
     </blockquote>
   );
@@ -54,7 +59,7 @@ export function Blockquote({ children, className = "" }: { children: ReactNode; 
 
 export function Callout({ emoji = "", text = "", children, className = "" }: { emoji?: string; text?: string; children?: React.ReactNode; className?: string }) {
   return (
-    <div className={`bg-gray-200 dark:bg-[#333] dark:text-gray-300 flex items-start p-3 my-6 text-base ${className}`}>
+    <div className={`bg-[#f7f7f7] dark:bg-[#1a1a1a] text-[#555555] dark:text-[#a1a1a1] flex items-start p-3 my-6 text-base border border-[#e0e0e0] dark:border-[#262626] rounded-md ${className}`}>
       <span className="block w-6 text-center mr-2 scale-[1.2]">{emoji}</span>
       <span className="block grow">{text ?? children}</span>
     </div>
@@ -69,8 +74,10 @@ export function Code({ children, className = "" }: { children: React.ReactNode; 
         [p_&]:px-1
         [p_&]:py-0.5
         [p_&]:rounded-sm
-        [p_&]:bg-neutral-200  
-        dark:[p_&]:bg-[#333]
+        [p_&]:bg-[#f7f7f7]
+        dark:[p_&]:bg-[#1a1a1a]
+        text-[#111111] dark:text-[#ededed]
+        border border-[#e0e0e0] dark:border-[#262626]
         ${className}
       `}
     >
@@ -79,9 +86,9 @@ export function Code({ children, className = "" }: { children: React.ReactNode; 
   );
 };
 
-export function Emphasis({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function Em({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <em className={className}>
+    <em className={`italic text-[#555555] dark:text-[#a1a1a1] ${className}`}>
       {children}
     </em>
   );
@@ -91,7 +98,7 @@ export function Figure({ wide = false, children, className = "" }: { children: R
   return (
     <div
       className={`text-center ${className} ${wide ? `
-      bg-gray-100
+      bg-[#f7f7f7]
       dark:bg-[#111]
       relative
       left-[50%]
@@ -113,7 +120,7 @@ export function Figure({ wide = false, children, className = "" }: { children: R
 
 export function H1({ children, id = undefined, className = "" }: { children: React.ReactNode; id?: string; className?: string }) {
   return (
-    <h1 id={id} className={`text-2xl font-bold mb-1 dark:text-gray-100 ${className}`}>
+    <h1 id={id} className={`text-[2.5rem] font-bold tracking-[-0.02em] mb-4 text-[#111111] dark:text-[#ededed] max-sm:text-[2rem] ${className}`}>
       {withHeadingId(children)}
     </h1>
   );
@@ -121,7 +128,7 @@ export function H1({ children, id = undefined, className = "" }: { children: Rea
 
 export function H2({ children, id = undefined, className = "" }: { children: React.ReactNode; id?: string; className?: string }) {
   return (
-    <h2 id={id} className={`group font-bold text-xl my-8 relative ${className}`}>
+    <h2 id={id} className={`group font-bold text-[1.75rem] mt-6 mb-3 text-[#111111] dark:text-[#ededed] relative ${className}`}>
       {withHeadingId(children)}
     </h2>
   );
@@ -129,7 +136,7 @@ export function H2({ children, id = undefined, className = "" }: { children: Rea
 
 export function H3({ children, id = undefined, className = "" }: { children: React.ReactNode; id?: string; className?: string }) {
   return (
-    <h3 id={id} className={`group font-bold text-lg my-8 relative ${className}`}>
+    <h3 id={id} className={`group font-semibold text-[1.2rem] mt-4 mb-2 text-[#111111] dark:text-[#ededed] relative ${className}`}>
       {withHeadingId(children)}
     </h3>
   );
@@ -137,7 +144,7 @@ export function H3({ children, id = undefined, className = "" }: { children: Rea
 
 export function Header({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <header className={className}>
+    <header className={`max-w-[680px] mx-auto mb-8 flex flex-col items-start gap-4 max-sm:hidden ${className}`}>
       {children}
     </header>
   );
@@ -145,102 +152,8 @@ export function Header({ children, className = "" }: { children: React.ReactNode
 
 export function HR({ className = "" }: { className?: string }) {
   return (
-    <div className={`my-8 text-center after:content-['﹡﹡﹡'] after:text-sm after:text-center after:inline ${className}`} />
+    <div className={`my-8 text-center after:content-['﹡﹡﹡'] after:text-sm after:text-center after:inline text-[#555555] dark:text-[#a1a1a1] ${className}`} />
   );
-}
-
-export async function Image({
-  src,
-  alt: originalAlt,
-  width = null,
-  height = null,
-  className = ""
-}: {
-  src: string;
-  alt?: string;
-  width: number | null;
-  height: number | null;
-  className?: string;
-}) {
-  const isDataImage = src.startsWith("data:");
-  if (isDataImage) {
-    /* eslint-disable @next/next/no-img-element */
-    return (
-      <img src={src} alt={originalAlt ?? ""} className={className} />
-    );
-  } else {
-    if (width === null || height === null) {
-      let imageBuffer: Buffer | null = null;
-
-      if (src.startsWith("http")) {
-        const response = await fetch(src);
-        const arrayBuffer = await response.arrayBuffer();
-        imageBuffer = Buffer.from(arrayBuffer);
-      } else {
-        if (
-          !process.env.CI &&
-          process.env.VERCEL_URL &&
-          process.env.NODE_ENV === "production"
-        ) {
-          const url =
-            "https://" +
-            process.env.VERCEL_URL +
-            src +
-            `?image_bot_bypass=${encodeURIComponent(process.env.IMAGE_BOT_BYPASS_SECRET!)}&x-vercel-protection-bypass=${encodeURIComponent(process.env.VERCEL_AUTOMATION_BYPASS_SECRET!)}`;
-          const response = await fetch(url);
-          if (!response.ok) {
-            throw new Error(`Failed to fetch image: ${response.status}`);
-          }
-          const arrayBuffer = await response.arrayBuffer();
-          imageBuffer = Buffer.from(arrayBuffer);
-        } else {
-          imageBuffer = await readFile(
-            new URL(
-              join(import.meta.url, "..", "..", "..", "..", "public", src)
-            ).pathname
-          );
-        }
-      }
-      const computedSize = sizeOf(imageBuffer);
-      if (
-        computedSize.width === undefined ||
-        computedSize.height === undefined
-      ) {
-        throw new Error("Could not compute image size");
-      }
-      width = computedSize.width;
-      height = computedSize.height;
-    }
-
-    let alt: string | null = null;
-    let dividedBy = 100;
-
-    if ("string" === typeof originalAlt) {
-      const match = originalAlt.match(/(.*) (\[(\d+)%\])?$/);
-      if (match != null) {
-        alt = match[1];
-        dividedBy = match[3] ? parseInt(match[3]) : 100;
-      }
-    } else {
-      alt = originalAlt ?? null;
-    }
-
-    const factor = dividedBy / 100;
-
-    return (
-      <span className={`my-5 flex flex-col items-center ${className}`}>
-        <NextImage
-          width={width * factor}
-          height={height * factor}
-          alt={alt ?? ""}
-          src={src}
-          unoptimized={src.endsWith(".gif")}
-        />
-
-        {alt && <Caption>{alt}</Caption>}
-      </span>
-    );
-  }
 }
 
 // we use `[ul_&]` prefix for the <UL> variety
@@ -248,14 +161,8 @@ export function LI({ children, className = "" }: { children: React.ReactNode; cl
   return (
     <li
       className={`${className}
-    my-2
-    [ul_&]:relative
-    [ul_&]:pl-4
-    [ul_&]:before:text-gray-400
-    [ul_&]:before:content-['–']
-    [ul_&]:before:mr-2
-    [ul_&]:before:absolute
-    [ul_&]:before:-ml-4
+    mb-2
+    w-fit
   `}
     >
       {children}
@@ -264,15 +171,15 @@ export function LI({ children, className = "" }: { children: React.ReactNode; cl
 }
 
 export function OL({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <ol className={`my-5 list-decimal list-inside ${className}`}>{children}</ol>;
+  return <ol className={`mb-4 pl-8 list-decimal list-outside text-[#555555] dark:text-[#a1a1a1] ${className}`}>{children}</ol>;
 }
 
 export function P({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <p className={`my-5 [blockquote_&]:my-2 ${className}`}>{children}</p>;
+  return <p className={`mb-2 text-[#555555] dark:text-[#a1a1a1] leading-[1.6] ${className}`}>{children}</p>;
 }
 
 export function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <section className={className}>
+  return <section className={`max-w-[680px] mx-auto mb-16 max-sm:mb-8 ${className}`}>
     {children}
   </section>;
 }
@@ -283,8 +190,10 @@ export const Snippet = ({ children, className = "", scroll = true, caption = nul
       className={`${className}
       p-4
       text-sm
-      bg-neutral-200 text-neutral-700
-      dark:bg-[#222] dark:text-gray-300
+      bg-[#f7f7f7] text-[#111111]
+      dark:bg-[#1a1a1a] dark:text-[#ededed]
+      border border-[#e0e0e0] dark:border-[#262626]
+      rounded-md
 
       ${scroll
           ? "overflow-scroll"
@@ -300,5 +209,7 @@ export const Snippet = ({ children, className = "", scroll = true, caption = nul
 );
 
 export function UL({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <ul className={`my-5 list-none list-inside ${className}`}>{children}</ul>;
+  return <ul className={`mb-4 pl-8 list-disc list-outside text-[#555555] dark:text-[#a1a1a1] space-y-2 ${className}`}>
+    {children}
+  </ul>;
 }

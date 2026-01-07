@@ -1,6 +1,12 @@
+"use client";
+
+import { Analytics as AnalyticsComponent } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
 export function Analytics() {
+  const isVercel = process.env.VERCEL === "1";
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -21,6 +27,8 @@ export function Analytics() {
 
   return (
     <>
+      <AnalyticsComponent />
+      <SpeedInsights />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-0HPC1ETJ35"
         strategy="afterInteractive"
@@ -38,7 +46,7 @@ export function Analytics() {
       <Script id="vercel-analytics" strategy="afterInteractive">
         {`window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};`}
       </Script>
-      <Script src="/_vercel/insights/script.js" strategy="lazyOnload" />
+      <Script src={(isVercel) ? "/_vercel/insights/script.js" : ""} strategy="lazyOnload" />
     </>
   );
 }

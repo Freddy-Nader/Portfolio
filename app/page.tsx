@@ -3,15 +3,15 @@
 import { ThemeToggle } from "@/app/components/theme-toggle";
 import {
   A,
-  Emphasis,
   H1,
   H2,
   H3,
-  Header,
   LI,
   P,
-  Section,
-  UL
+  UL,
+  Em,
+  Header,
+  Section
 } from "@/app/components/elements";
 import {
   Table,
@@ -41,14 +41,14 @@ export default function Home() {
       <Section>
         <H1 id="me"><A href="/">Hi, I'm Freddy</A></H1>
         <P>I am a Mexican Computer Science student.</P>
-        <P>I <Emphasis>love</Emphasis> pure math, programming, and beautiful things.</P>
-        <P><Emphasis>Curiosity</Emphasis> and <Emphasis>passion</Emphasis> are my driving factors in everything I do.</P>
+        <P>I <Em>love</Em> pure math, programming, and beautiful things.</P>
+        <P><Em>Curiosity</Em> and <Em>passion</Em> are my driving factors in everything I do.</P>
         <P>I like to learn new things, such as <A href="#languages">languages</A>.</P>
         <P>As Steve Jobs <A href="https://putsomethingback.stevejobsarchive.com/">
           put it
-        </A>, I also want to <Emphasis>put something back</Emphasis>.</P>
+        </A>, I also want to <Em>put something back</Em>.</P>
         <P>You can follow me on <A href="https://www.linkedin.com/in/alfredo-nader/">
-          AedIn
+          LinkedIn
         </A> and <A href="https://github.com/Freddy-Nader/">
             GitHub
           </A>. I read every <A href="mailto:alfredonaderz@gmail.com">
@@ -65,14 +65,14 @@ export default function Home() {
           <P>Teachers (at all levels) often have many administrative responsibilities. Sometimes, these duties can
             lead to a decline in the quality of their teaching. I am building several software tools so that
             teachers can focus their time and energy on what matters: providing quality education.
-            <em>Teaching should be about teaching, not about managing.</em>
+            <Em>Teaching should be about teaching, not about managing.</Em>
           </P>
         </div>
 
         <div className="block">
           <H3>Ampl</H3>
           <P>Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for
-            something you're not getting the most out of. That's why I am developing <em>Ampl</em>. It lets you use
+            something you're not getting the most out of. That's why I am developing <Em>Ampl</Em>. It lets you use
             all AI models with a pay-as-you-go pricing model, so you stop paying for what you're not using!</P>
         </div>
       </Section>
@@ -129,10 +129,9 @@ export default function Home() {
         <div className="block">
           <H2 id="awards">Awards</H2>
           <UL>
-            <LI>First place at
-              <A href="https://www.anahuac.mx/">
-                Anáhuac University
-              </A>'s Alan Turing National Programming Contest
+            <LI>First place at <A href="https://www.anahuac.mx/">
+              Anáhuac University
+            </A>'s Alan Turing National Programming Contest
             </LI>
           </UL>
         </div>

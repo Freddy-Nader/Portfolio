@@ -1,8 +1,5 @@
-"use client"
-
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/app/components/theme-provider"
-import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@/app/components/analytics";
 import { KatexInit } from "@/app/components/katex-init";
 import { HeadKatex } from "@/app/components/head-katex"
@@ -10,9 +7,21 @@ import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Alfredo Nader - Portfolio",
-  description: "Alfredo Nader is a Computer Science student passionate about pure math, programming, and beautiful things. Explore his portfolio, experiments, and writings.",
-  keywords: ["Alfredo Nader", "Freddy Nader", "Computer Science", "Mathematics", "Programming", "Portfolio", "Anáhuac University", "Software Engineer"],
-  authors: [{ name: "Alfredo Nader" }],
+  description:
+    "Alfredo Nader is a Computer Science student passionate about pure math, programming, and beautiful things. Explore his portfolio, experiments, and writings.",
+  keywords: [
+    "Alfredo Nader",
+    "Freddy Nader",
+    "Computer Science",
+    "Mathematics",
+    "Programming",
+    "Portfolio",
+    "Anáhuac University",
+    "Software Engineer"
+  ],
+  authors: [{
+    name: "Alfredo Nader"
+  }],
   openGraph: {
     type: "website",
     url: "https://anader.xyz/",
@@ -29,11 +38,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://anader.xyz/",
   },
+  metadataBase: new URL("https://anader.xyz/"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
       <head>
         <Analytics />
         <HeadKatex />
@@ -52,8 +69,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           defaultTheme="system"
           enableSystem
         >
-          {children}
           <KatexInit />
+          {children}
         </ThemeProvider>
       </body>
     </html>

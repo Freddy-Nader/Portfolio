@@ -1,16 +1,14 @@
 export function Table({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`my-6 overflow-x-auto ${className}`}>
-      <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-        {children}
-      </table>
-    </div>
+    <table className={`overflow-x-auto w-full border-collapse mt-4 text-[0.95rem]`}>
+      {children}
+    </table>
   );
 }
 
 export function THead({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <thead className={`bg-gray-50 dark:bg-gray-800 ${className}`}>
+    <thead className={`${className}`}>
       {children}
     </thead>
   );
@@ -18,7 +16,7 @@ export function THead({ children, className = "" }: { children: React.ReactNode;
 
 export function TBody({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <tbody className={`bg-white divide-y divide-gray-200 dark:bg-gray-900 dark:divide-gray-700 ${className}`}>
+    <tbody className={`${className}`}>
       {children}
     </tbody>
   );
@@ -26,7 +24,7 @@ export function TBody({ children, className = "" }: { children: React.ReactNode;
 
 export function TD({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <td className={`px-6 py-4 text-sm text-gray-900 dark:text-gray-100 ${className}`}>
+    <td className={`py-2 text-[var(--text-secondary)] align-top last:text-right last:whitespace-nowrap last:pl-4 last:tabular-nums ${className}`}>
       {children}
     </td>
   );
@@ -34,7 +32,7 @@ export function TD({ children, className = "" }: { children: React.ReactNode; cl
 
 export function TH({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <th className={`px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ${className}`}>
+    <th className={`text-left text-[var(--text-primary)] font-medium pb-2 border-b border-[var(--border)] last:text-right last:whitespace-nowrap last:pl-4 last:tabular-nums ${className}`}>
       {children}
     </th>
   );
@@ -42,7 +40,7 @@ export function TH({ children, className = "" }: { children: React.ReactNode; cl
 
 export function TR({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <tr className={`${className}`}>
+    <tr className={className}>
       {children}
     </tr>
   );

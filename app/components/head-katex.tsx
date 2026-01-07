@@ -1,3 +1,5 @@
+"use client";
+
 export function HeadKatex() {
   return (
     <>
@@ -7,4 +9,3 @@ export function HeadKatex() {
     </>
   )
 }
-
