@@ -37,9 +37,11 @@ GEMINI.md
 .mcp.json.*
 # playwright.sh
 
-# nextjs:
+#---------
+# Next.js
+#---------
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -49,26 +51,26 @@ GEMINI.md
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# Testing
 /coverage
 
-# next.js
+# Next.js
 /.next/
 /out/
 
-# production
+# Production
 /build
 
-# misc
+# Misc
 .DS_Store
 *.pem
 
-# debug
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
