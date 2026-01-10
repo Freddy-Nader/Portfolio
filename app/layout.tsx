@@ -56,7 +56,7 @@ export default function RootLayout({
         <Analytics />
         <HeadKatex />
       </head>
-      <body className="bg-[var(--bg-color)] text-[color:var(--text-primary)] font-[var(--font-stack)] leading-relaxed text-base text-foreground p-8 mt-10 transition-colors duration-300 ease-in-out antialiased">
+      <body className="bg-[var(--bg-color)] text-[color:var(--text-primary)] font-[var(--font-stack)] leading-relaxed text-base text-foreground transition-colors duration-300 ease-in-out antialiased">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WS2F5Q3W"

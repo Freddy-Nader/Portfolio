@@ -120,7 +120,7 @@ export function Figure({ wide = false, children, className = "" }: { children: R
 
 export function H1({ children, id = undefined, className = "" }: { children: React.ReactNode; id?: string; className?: string }) {
   return (
-    <h1 id={id} className={`text-[2.5rem] font-bold tracking-[-0.02em] mb-4 text-[#111111] dark:text-[#ededed] max-sm:text-[2rem] ${className}`}>
+    <h1 id={id} className={`text-[2rem] font-bold tracking-[-0.02em] mb-4 text-[#111111] dark:text-[#ededed] max-sm:text-[2rem] ${className}`}>
       {withHeadingId(children)}
     </h1>
   );
@@ -128,7 +128,7 @@ export function H1({ children, id = undefined, className = "" }: { children: Rea
 
 export function H2({ children, id = undefined, className = "" }: { children: React.ReactNode; id?: string; className?: string }) {
   return (
-    <h2 id={id} className={`group font-bold text-[1.75rem] mt-6 mb-3 text-[#111111] dark:text-[#ededed] relative ${className}`}>
+    <h2 id={id} className={`group font-bold text-[1.5rem] mt-6 mb-3 text-[#111111] dark:text-[#ededed] relative ${className}`}>
       {withHeadingId(children)}
     </h2>
   );
@@ -179,7 +179,7 @@ export function P({ children, className = "" }: { children: React.ReactNode; cla
 }
 
 export function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <section className={`max-w-[680px] mx-auto mb-16 max-sm:mb-8 ${className}`}>
+  return <section className={`max-w-[680px] mx-auto mb-12 max-sm:mb-8 ${className}`}>
     {children}
   </section>;
 }

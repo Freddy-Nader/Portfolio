@@ -12,42 +12,23 @@ import {
   Header,
   Section
 } from "@/app/components/elements";
-import {
-  Table,
-  THead,
-  TBody,
-  TR,
-  TH,
-  TD
-} from "@/app/components/table";
 
 export default function Home() {
   return (
-    <>
-      <Header>
-        <ThemeToggle />
-        <UL className="toc">
-          <LI><A className="btn" href="#me">Me</A></LI>
-          <LI><P>/</P></LI>
-          <LI><A className="btn" href="#experiments">Experiments</A></LI>
-          <LI><P>/</P></LI>
-          <LI><A className="btn" href="#words">Words</A></LI>
-          <LI><P>/</P></LI>
-          <LI><A className="btn" href="#exp">Experience</A></LI>
-        </UL>
-      </Header>
-
+    <main className="p-8 mt-12">
+      <ThemeToggle />
+      
       <Section>
         <A href="/">
           <H1 id="me">Hi, I'm Freddy</H1>
         </A>
         <P>I am a Mexican Computer Science student.</P>
-        <P>I <Em>love</Em> pure math, programming, and beautiful things.</P>
+        <P>I <Em>love</Em> pure math, programming, and learning new things.</P>
         <P><Em>Curiosity</Em> and <Em>passion</Em> are my driving factors in everything I do.</P>
-        <P>I like to learn new things, such as <A href="#languages">languages</A>.</P>
         <P>As Steve Jobs <A href="https://putsomethingback.stevejobsarchive.com/">
           put it
         </A>, I also want to <Em>put something back</Em>.</P>
+        <P>You can download my CV <A href="/f/cv.pdf" target="_blank">here</A>.</P>
         <P>You can follow me on <A href="https://www.linkedin.com/in/alfredo-nader/">
           LinkedIn
         </A> and <A href="https://github.com/Freddy-Nader/">
@@ -108,75 +89,6 @@ export default function Home() {
           </A>.
         </P>
       </Section>
-
-      <Section>
-        <A href="/f/cv.pdf" target="_blank">
-          <H1 id="exp">Experience</H1>
-        </A>
-
-        <div className="block external-link">
-          <A href="/f/cv.pdf" target="_blank" className="btn">
-            <strong>Download CV</strong>
-          </A>
-        </div>
-
-        <div className="block">
-          <Table className="block">
-            <THead>
-              <TR>
-                <TH>Activity</TH>
-                <TH>Year</TH>
-              </TR>
-            </THead>
-            <TBody>
-              <TR>
-                <TD>
-                  Founder and CEO of Ampl
-                </TD>
-                <TD>Aug 2025</TD>
-              </TR>
-              <TR>
-                <TD>
-                  Founder and CEO of QuickGrading
-                </TD>
-                <TD>Dec 2024</TD>
-              </TR>
-              <TR>
-                <TD>
-                  Data Analyst at Mindnic—a social listening company based in Mexico City.
-                </TD>
-                <TD>Nov 2024</TD>
-              </TR>
-              <TR>
-                <TD>Publication of my <A href="https://doi.org/10.48550/arXiv.2401.04026">first paper</A></TD>
-                <TD>Jan 2024</TD>
-              </TR>
-              <TR>
-                <TD>First place at <A href="https://www.anahuac.mx/">
-                  Anáhuac University
-                </A>'s Alan Turing National Programming Contest</TD>
-                <TD>Dec 2022</TD>
-              </TR>
-              <TR>
-                <TD>
-                  Internship at <A href="https://www.ericsson.com/">
-                    Ericsson
-                  </A>
-                </TD>
-                <TD>Nov 2022</TD>
-              </TR>
-              <TR>
-                <TD>
-                  Participation on <A href="https://educa.banxico.org.mx/contactobanxico/">
-                    Premio Contacto Banxico
-                  </A>
-                </TD>
-                <TD>Dec 2021</TD>
-              </TR>
-            </TBody>
-          </Table>
-        </div>
-      </Section>
-    </>
+    </main>
   );
 }
