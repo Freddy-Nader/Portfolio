@@ -4,7 +4,6 @@ import { ThemeToggle } from "@/app/components/theme-toggle";
 import {
   A,
   H1,
-  H2,
   H3,
   LI,
   P,
@@ -34,12 +33,14 @@ export default function Home() {
           <LI><P>/</P></LI>
           <LI><A className="btn" href="#words">Words</A></LI>
           <LI><P>/</P></LI>
-          <LI><A className="btn" href="#resume">Résumé</A></LI>
+          <LI><A className="btn" href="#exp">Experience</A></LI>
         </UL>
       </Header>
 
       <Section>
-        <H1 id="me"><A href="/">Hi, I'm Freddy</A></H1>
+        <A href="/">
+          <H1 id="me">Hi, I'm Freddy</H1>
+        </A>
         <P>I am a Mexican Computer Science student.</P>
         <P>I <Em>love</Em> pure math, programming, and beautiful things.</P>
         <P><Em>Curiosity</Em> and <Em>passion</Em> are my driving factors in everything I do.</P>
@@ -82,7 +83,7 @@ export default function Home() {
 
         <div className="block external-link">
           <H3>
-            <A href="/words/2401.04026v1.pdf">
+            <A href="/f/2401.04026v1.pdf">
               Closed-Form Formula for the Partition Function and Related Functions
             </A>
           </H3>
@@ -93,7 +94,7 @@ export default function Home() {
             closed-form formula
           </A> for the <A href="https://en.wikipedia.org/wiki/Partition_function_(number_theory)">
             number of partitions of an integer number
-          </A>, $p(n)$. In a paper <A href="https://arxiv.org/abs/2401.04026">
+          </A>, $p(n)$. In a paper <A href="https://doi.org/10.48550/arXiv.2401.04026">
             published
           </A> as a preprint on arXiv, such a formula is developed using combinatorial methods. The methods
           used have implications over other similar functions, such as <A href="https://en.wikipedia.org/wiki/Spt_function">
@@ -109,84 +110,17 @@ export default function Home() {
       </Section>
 
       <Section>
-        <H1 id="resume">Résumé</H1>
+        <A href="/f/cv.pdf" target="_blank">
+          <H1 id="exp">Experience</H1>
+        </A>
 
         <div className="block external-link">
-          <A href="/resume.pdf" target="_blank" className="btn">
-            <strong>Download résumé</strong>
+          <A href="/f/cv.pdf" target="_blank" className="btn">
+            <strong>Download CV</strong>
           </A>
         </div>
 
         <div className="block">
-          <H2 id="languages">Languages</H2>
-          <UL>
-            <LI>Spanish (C2)</LI>
-            <LI>English (C1)</LI>
-            <LI>Italian (B2)</LI>
-          </UL>
-        </div>
-
-        <div className="block">
-          <H2 id="awards">Awards</H2>
-          <UL>
-            <LI>First place at <A href="https://www.anahuac.mx/">
-              Anáhuac University
-            </A>'s Alan Turing National Programming Contest
-            </LI>
-          </UL>
-        </div>
-
-        <div className="block external-link">
-          <H2 id="publications">Publications</H2>
-          <UL>
-            <LI>
-              <A href="/words/2401.04026v1.pdf">
-                Closed-Form Formula for the Partition Function and Related Functions
-              </A>
-            </LI>
-          </UL>
-        </div>
-
-        <div className="block external-link">
-          <H2 id="education">Education</H2>
-          <Table className="block">
-            <THead>
-              <TR>
-                <TH>Institution</TH>
-                <TH>Period</TH>
-              </TR>
-            </THead>
-            <TBody>
-              <TR>
-                <TD>
-                  <A href="https://www.ibo.org/">
-                    International Baccalaureate
-                  </A>
-                </TD>
-                <TD>aug 2021 - may 2023</TD>
-              </TR>
-              <TR>
-                <TD>
-                  <A href="https://www.nordangliaeducation.com/eton-school-mexico">
-                    ETON School
-                  </A>
-                </TD>
-                <TD>aug 2011 - jun 2023</TD>
-              </TR>
-              <TR>
-                <TD>
-                  <A href="https://www.anahuac.mx/">
-                    Anáhuac University
-                  </A>
-                </TD>
-                <TD>aug 2023 - dec 2028</TD>
-              </TR>
-            </TBody>
-          </Table>
-        </div>
-
-        <div className="block">
-          <H2>Experience</H2>
           <Table className="block">
             <THead>
               <TR>
@@ -197,11 +131,31 @@ export default function Home() {
             <TBody>
               <TR>
                 <TD>
-                  Participation on <A href="https://educa.banxico.org.mx/contactobanxico/">
-                    Premio Contacto Banxico
-                  </A>
+                  Founder and CEO of Ampl
                 </TD>
-                <TD>dec 2021</TD>
+                <TD>Aug 2025</TD>
+              </TR>
+              <TR>
+                <TD>
+                  Founder and CEO of QuickGrading
+                </TD>
+                <TD>Dec 2024</TD>
+              </TR>
+              <TR>
+                <TD>
+                  Data Analyst at Mindnic—a social listening company based in Mexico City.
+                </TD>
+                <TD>Nov 2024</TD>
+              </TR>
+              <TR>
+                <TD>Publication of my <A href="https://doi.org/10.48550/arXiv.2401.04026">first paper</A></TD>
+                <TD>Jan 2024</TD>
+              </TR>
+              <TR>
+                <TD>First place at <A href="https://www.anahuac.mx/">
+                  Anáhuac University
+                </A>'s Alan Turing National Programming Contest</TD>
+                <TD>Dec 2022</TD>
               </TR>
               <TR>
                 <TD>
@@ -209,25 +163,15 @@ export default function Home() {
                     Ericsson
                   </A>
                 </TD>
-                <TD>nov 2022</TD>
+                <TD>Nov 2022</TD>
               </TR>
               <TR>
                 <TD>
-                  Data Analyst at Mindnic—a social listening company based in Mexico City.
+                  Participation on <A href="https://educa.banxico.org.mx/contactobanxico/">
+                    Premio Contacto Banxico
+                  </A>
                 </TD>
-                <TD>nov 2024</TD>
-              </TR>
-              <TR>
-                <TD>
-                  Founder and CEO of QuickGrading
-                </TD>
-                <TD>dec 2024</TD>
-              </TR>
-              <TR>
-                <TD>
-                  Founder and CEO of Ampl
-                </TD>
-                <TD>aug 2025</TD>
+                <TD>Dec 2021</TD>
               </TR>
             </TBody>
           </Table>

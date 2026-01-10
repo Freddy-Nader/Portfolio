@@ -154,10 +154,6 @@
         padding: 0;
         scroll-behavior: smooth;
     }
-
-    body {
-        @apply bg-[var(--bg-color)] text-[color:var(--text-primary)] font-[var(--font-stack)] leading-relaxed text-base text-foreground p-8 mt-10 transition-colors duration-300 ease-in-out antialiased;
-    }
 }
 
 /* 
@@ -175,19 +171,6 @@
 .sun-icon,
 .moon-icon {
     fill: currentColor;
-}
-
-#me a {
-    text-decoration: none;
-    border-bottom: none;
-    color: var(--text-primary);
-}
-
-#me a:hover {
-    text-decoration: none;
-    border-bottom: none;
-    color: var(--text-primary);
-    background-color: transparent;
 }
 
 /* Buttons */
@@ -245,7 +228,6 @@ header a.btn {
     fill: currentColor;
     transition: transform 0.3s ease;
 }
-
 
 .light #theme-toggle .moon-icon {
     display: none;

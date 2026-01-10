@@ -1,5 +1,27 @@
 {
   "cleanUrls": true,
   "buildCommand": "npm run build",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/cv",
+      "destination": "/f/cv.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/partitions",
+      "destination": "/f/2401.04026v1.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/paper",
+      "destination": "/f/2401.04026v1.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/pnk",
+      "destination": "/f/2401.04026v1.pdf",
+      "permanent": true
+    }
+  ]
 }
