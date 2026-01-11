@@ -1,23 +1,17 @@
 "use client"
 
-import { ThemeToggle } from "@/app/components/theme-toggle";
 import {
   A,
   H1,
   H3,
-  LI,
   P,
-  UL,
   Em,
-  Header,
   Section
 } from "@/app/components/elements";
 
 export default function Home() {
   return (
     <main className="p-8 mt-12">
-      <ThemeToggle />
-      
       <Section>
         <A href="/">
           <H1 id="me">Hi, I'm Freddy</H1>

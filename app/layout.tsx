@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/app/components/theme-provider"
+import { ThemeProvider, ThemeToggle } from "@/app/components/theme"
 import { Analytics } from "@/app/components/analytics";
 import { KatexInit } from "@/app/components/katex-init";
 import { HeadKatex } from "@/app/components/head-katex"
@@ -71,6 +71,7 @@ export default function RootLayout({
           enableSystem
         >
           <KatexInit />
+          <ThemeToggle />
           {children}
         </ThemeProvider>
       </body>
