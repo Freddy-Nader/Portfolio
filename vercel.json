@@ -4,7 +4,7 @@
   "framework": "nextjs",
   "redirects": [
     {
-      "source": "/cv",
+      "source": "/cv.pdf",
       "destination": "/f/cv.pdf",
       "permanent": true
     },

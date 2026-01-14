@@ -196,7 +196,8 @@
     background-color: var(--btn-hover);
 }
 
-header ul {
+header ul,
+.bread {
     display: flex;
     list-style: none;
     margin: 0;

@@ -2,10 +2,10 @@
 
 import {
   A,
+  Em,
   H1,
   H3,
   P,
-  Em,
   Section
 } from "@/app/components/elements";
 
@@ -22,7 +22,7 @@ export default function Home() {
         <P>As Steve Jobs <A href="https://putsomethingback.stevejobsarchive.com/">
           put it
         </A>, I also want to <Em>put something back</Em>.</P>
-        <P>You can download my CV <A href="/f/cv.pdf" target="_blank">here</A>.</P>
+        <P>You can <A href="/cv">see</A> or <A href="/f/cv.pdf" target="_blank">download</A> my CV.</P>
         <P>You can follow me on <A href="https://www.linkedin.com/in/alfredo-nader/">
           LinkedIn
         </A> and <A href="https://github.com/Freddy-Nader/">
