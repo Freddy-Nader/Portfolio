@@ -37,11 +37,16 @@ export default function Home() {
         <H1 id="experiments">Experiments</H1>
 
         <div className="block">
-          <H3>estudio.so</H3>
+          <H3 className="external-link">
+            <A href="https://estudioso.anader.xyz">
+              estudio.so
+            </A>
+          </H3>
           <P>Teachers often have many administrative responsibilities. Sometimes, these administrative responsibilities 
-            can lead to a decline in the quality of their teaching. Using estudio.so, teachers can focus their time and 
-            energy on what matters: providing a quality education to all their students. The product ensures teachers 
-            teach better and students learn better.
+            can lead to a decline in the quality of their teaching. Using <A href="https://estudioso.anader.xyz">
+              estudio.so
+            </A>, teachers can focus their time and energy on what matters: providing a quality education to all their students. 
+            The product ensures teachers teach better and students learn better.
           </P>
         </div>
 
