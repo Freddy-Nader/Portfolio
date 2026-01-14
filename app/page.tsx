@@ -37,11 +37,11 @@ export default function Home() {
         <H1 id="experiments">Experiments</H1>
 
         <div className="block">
-          <H3>QuickGrading</H3>
-          <P>Teachers (at all levels) often have many administrative responsibilities. Sometimes, these duties can
-            lead to a decline in the quality of their teaching. I am building several software tools so that
-            teachers can focus their time and energy on what matters: providing quality education.
-            <Em>Teaching should be about teaching, not about managing.</Em>
+          <H3>estudio.so</H3>
+          <P>Teachers often have many administrative responsibilities. Sometimes, these administrative responsibilities 
+            can lead to a decline in the quality of their teaching. Using estudio.so, teachers can focus their time and 
+            energy on what matters: providing a quality education to all their students. The product ensures teachers 
+            teach better and students learn better.
           </P>
         </div>
 
@@ -56,8 +56,8 @@ export default function Home() {
       <Section>
         <H1 id="words">Words</H1>
 
-        <div className="block external-link">
-          <H3>
+        <div className="block">
+          <H3 className="external-link">
             <A href="/f/2401.04026v1.pdf">
               Closed-Form Formula for the Partition Function and Related Functions
             </A>
