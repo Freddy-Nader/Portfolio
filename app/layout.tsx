@@ -5,6 +5,18 @@ import { KatexInit } from "@/app/components/katex-init";
 import { HeadKatex } from "@/app/components/head-katex"
 import "@/app/globals.css";
 
+/**
+ * The metadata object contains the title, description, keywords, authors, openGraph, Twitter metadata, and canonical URL of the website.
+ * @typedef {Object} Metadata
+ * @property {string} title - The title of the website.
+ * @property {string} description - A short description of the website.
+ * @property {string[]} keywords - An array of keywords related to the website.
+ * @property {{name: string}} authors - An array of objects containing the name of the author(s).
+ * @property {{type: string, url: string, title: string, description: string, images: string[]}} openGraph - The openGraph metadata of the website.
+ * @property {{card: string, title: string, description: string, images: string[]}} twitter - The Twitter metadata of the website.
+ * @property {{canonical: string}} alternates - An object containing the canonical URL of the website.
+ * @property {URL} metadataBase - The base URL of the website.
+ */
 export const metadata: Metadata = {
   title: "Alfredo Nader - Portfolio",
   description:
@@ -41,6 +53,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://anader.xyz/"),
 };
 
+/**
+ * The root layout component of the website.
+ *
+ * It renders the HTML structure of the website, including the head and body tags.
+ * The head tag contains the favicon, Google Analytics script, and the Katex script.
+ * The body tag contains the noscript tag for Google Analytics, the theme provider, Katex initialization, the theme toggle, and the children of the component.
+ *
+ * The component also sets the default CSS variables for the website, such as the background color, text color, font stack, leading, text size, text foreground, and transition effects.
+ *
+ * @param {ReactNode} children - The children of the component.
+ * @returns {ReactReactElement} The root layout component of the website.
+ */
 export default function RootLayout({
   children
 }: {

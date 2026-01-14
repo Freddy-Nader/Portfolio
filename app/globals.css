@@ -50,6 +50,13 @@
     --radius-4xl: calc(var(--radius) + 16px);
 }
 
+/**
+ * :root CSS variables.
+ * These variables are used throughout the application.
+ * They define the colors, spacing, font, and other styles used in the application.
+ * They are used to create a consistent look and feel across the application.
+ * @see https://tailwindcss.com/docs/customizing-colors
+ */
 :root {
     /* Tailwind */
     --radius: 20%;
@@ -98,6 +105,12 @@
     --spacing-xl: 4rem;
 }
 
+/**
+ * Dark theme colors.
+ * These colors are used to style the dark theme of the application.
+ * They define the colors used in the application when the dark theme is enabled.
+ * They are used to create a consistent look and feel across the application when the dark theme is enabled.
+ */
 .dark {
     --background: oklch(0.13 0.028 261.692);
     --foreground: oklch(0.985 0.002 247.839);
@@ -132,6 +145,12 @@
     --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/**
+ * Light theme colors.
+ * These colors are used to style the light theme of the application.
+ * They define the colors used in the application when the light theme is enabled.
+ * They are used to create a consistent look and feel across the application when the light theme is enabled.
+ */
 .light {
     --bg-color: #f7f7f7;
     --text-primary: #111111;
@@ -142,10 +161,20 @@
 }
 
 @layer base {
+    /**
+     * Applies default border, outline, and ring styles to all elements.
+     * This is a utility class that can be applied to any element to give it a default
+     * border, outline, and ring style.
+     */
     * {
         @apply border-border outline-ring/50;
     }
 
+    /**
+     * Applies default box-sizing, margin, padding, and scroll-behavior styles to all elements.
+     * This is a utility class that can be applied to any element to give it a default
+     * box-sizing, margin, padding, and scroll-behavior style.
+     */
     *,
     *::before,
     *::after {
@@ -161,6 +190,11 @@
 */
 
 /* Icons */
+/**
+ * A class for styling icons.
+ *
+ * Sets the icon to be 24x24 pixels in size, displayed inline-block, and vertically aligned to the middle.
+ */
 .icon {
     width: 24px;
     height: 24px;
@@ -168,12 +202,14 @@
     vertical-align: middle;
 }
 
-.sun-icon,
-.moon-icon {
-    fill: currentColor;
-}
-
 /* Buttons */
+/**
+ * A class for styling buttons.
+ *
+ * Sets the button to have no background, no border, the primary text color, a pointer cursor, and a translate of -4px horizontally.
+ * Additionally, sets the button to have no text decoration, no bottom border, a border radius of 8px, and a transition of background color in 0.2s ease.
+ * Finally, sets the button to display as a flex item, with center alignment for both the horizontal and vertical axes, and a width and height of fit-content, with padding of 2px horizontally and 5px vertically.
+ */
 .btn {
     background: none;
     border: none;
@@ -192,10 +228,21 @@
     padding: 2px 5px;
 }
 
+/**
+ * Sets the background color of the button to a dark grey color when hovered over.
+ *
+ * This is a dark grey color that is used to indicate the button is interactive.
+ */
 .btn:hover {
     background-color: var(--btn-hover);
 }
 
+/**
+ * A class for styling header lists and breadcrumbs.
+ *
+ * Sets the list to be displayed as a flex item, with no list style, no margin, no padding, and a gap of small spacing.
+ * Additionally, sets the list to have center alignment for both the horizontal and vertical axes, and a translate of -4px horizontally.
+ */
 header ul,
 .bread {
     display: flex;
@@ -207,17 +254,32 @@ header ul,
     transform: translate(-4px, 0);
 }
 
+/**
+ * A class for styling header list items and paragraphs.
+ *
+ * Sets the margin and padding of the element to 0.
+ */
 header li,
 header p {
     margin: 0;
     padding: 0;
 }
 
+/**
+ * A class for styling header paragraphs.
+ *
+ * Sets the user select to none and pointer events to none.
+ */
 header p {
     user-select: none;
     pointer-events: none;
 }
 
+/**
+ * A class for styling header buttons.
+ *
+ * Sets the transform to none.
+ */
 header a.btn {
     transform: none;
 }
@@ -230,23 +292,47 @@ header a.btn {
     transition: transform 0.3s ease;
 }
 
+/**
+ * A class for styling the moon icon in the theme toggle.
+ *
+ * Sets the display to none when the theme is light.
+ */
 .light #theme-toggle .moon-icon {
     display: none;
 }
 
+/**
+ * A class for styling the sun icon in the theme toggle.
+ *
+ * Sets the display to block when the theme is light.
+ */
 .light #theme-toggle .sun-icon {
     display: block;
 }
 
+/**
+ * A class for styling the sun icon in the theme toggle.
+ *
+ * Sets the display to none when the theme is not light.
+ */
 :root:not(.light) #theme-toggle .sun-icon {
     display: none;
 }
 
+/**
+ * A class for styling the moon icon in the theme toggle.
+ *
+ * Sets the display to block when the theme is not light.
+ */
 :root:not(.light) #theme-toggle .moon-icon {
     display: block;
 }
 
 /* Tooltip for Hotkey */
+/**
+ * Animation that fades in an element and moves it up by 35px.
+ * The animation is used to display the tooltip for the hotkey.
+ */
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -255,11 +341,25 @@ header a.btn {
 }
 
 /* Specific Section Styles */
+/**
+ * A utility class for adding a margin bottom of medium spacing to an element.
+ */
 .block {
     margin-bottom: var(--spacing-md);
 }
 
 /* External links */
+/**
+ * A utility class for styling external links.
+ *
+ * Sets the border-bottom, text-decoration, display, align-items, color and border-radius to the following values:
+ * border-bottom: none;
+ * text-decoration: none;
+ * display: inline-flex;
+ * align-items: center;
+ * color: inherit;
+ * border-radius: 0;
+ */
 .external-link a {
     border-bottom: none;
     text-decoration: none;
@@ -269,11 +369,21 @@ header a.btn {
     border-radius: 0;
 }
 
+/**
+ * A utility class for styling external links when hovered.
+ *
+ * Sets the border-bottom to 1px solid the primary text color and the background color to transparent.
+ */
 .external-link a:hover {
     border-bottom: 1px solid var(--text-primary);
     background-color: transparent;
 }
 
+/**
+ * A utility class for styling external links.
+ *
+ * Sets the content to an empty string, the height to 1em, the background color to the current color, the mask to an external link icon, the mask size to contain, the width to 1em, the margin left to 0.4em, and the opacity to 1.
+ */
 .external-link a::after {
     content: "";
     height: 1em;

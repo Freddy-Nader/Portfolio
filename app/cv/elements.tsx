@@ -9,6 +9,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
+/**
+ * A reusable CVSection component that displays a title with uppercase letters and children below it,
+ * with a space of 4 units between each child.
+ * @param {{ title: string, children: React.ReactNode }} props - The props of the component.
+ * @returns {React.ReactElement} A reusable CVSection component.
+ */
 export const CVSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <Section>
     <H2 className="uppercase">{title}</H2>
@@ -18,6 +24,19 @@ export const CVSection = ({ title, children }: { title: string; children: React.
   </Section>
 );
 
+/**
+ * A reusable CVEntry component that displays a title with uppercase letters and children below it,
+ * with a space of 4 units between each child.
+ *
+ * @param {Object} props - The props of the component.
+ * @prop {string} title - The title of the entry.
+ * @prop {string} [titleMobile] - The title of the entry to be displayed on mobile.
+ * @prop {string} [date] - The date of the entry.
+ * @prop {React.ReactNode} [subtitle] - The subtitle of the entry.
+ * @prop {React.ReactNode} [subtitleMobile] - The subtitle of the entry to be displayed on mobile.
+ * @prop {React.ReactNode} [children] - The children of the entry.
+ * @prop {string} [className] - Additional CSS classes to be applied to the component.
+ */
 export const CVEntry = ({
   title,
   titleMobile, // Mobile title
@@ -71,6 +90,13 @@ export const CVEntry = ({
   )
 };
 
+/**
+ * A reusable language component that displays a language with its proficiency level.
+ * @param {{ lang: string, level: string }} props - The props of the component.
+ * @prop {string} lang - The language to be displayed.
+ * @prop {string} [level] - The proficiency level of the language.
+ * @returns {React.ReactElement} A reusable language component.
+ */
 export const Language = ({
   lang,
   level
@@ -84,6 +110,13 @@ export const Language = ({
   </div>
 )
 
+/**
+ * A reusable Contact component that displays an icon and a text in a button.
+ * The component takes an href, an optional text, and an optional icon.
+ * If no text is provided, the href will be used as the text.
+ * The component can be used to display a contact link with an icon.
+ * @returns {React.ReactElement} A reusable Contact component.
+ */
 export const Contact = ({
   href,
   text = "",

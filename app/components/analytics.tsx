@@ -4,7 +4,16 @@ import { Analytics as AnalyticsComponent } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
+/**
+ * This component includes the analytics scripts for Google Analytics, Google Tag Manager, and Vercel Insights.
+ * It also includes a JSON-LD script for search engine optimization.
+ */
 export function Analytics() {
+  /**
+   * Returns true if the app is running on Vercel, false otherwise.
+   * Uses the environment variable VERCEL.
+   * @type {boolean}
+   */
   const isVercel = process.env.VERCEL === "1";
 
   const jsonLd = {

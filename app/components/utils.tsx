@@ -1,6 +1,17 @@
+"use client"
+
 import { Children, ReactNode } from "react";
 import Balancer from "react-wrap-balancer";
 
+/**
+ * Replaces headings with an anchor element that links to the corresponding
+ * heading element with an id. The anchor element is invisible by default
+ * and becomes visible when the heading element is hovered.
+ *
+ * @param {ReactNode} children - The children elements to be processed.
+ *
+ * @returns {ReactNode} The processed children elements with anchor elements.
+ */
 export function withHeadingId(children: ReactNode) {
   return Children.map(children, el => {
     if ("string" === typeof el) {
@@ -46,6 +57,12 @@ export function withHeadingId(children: ReactNode) {
   });
 }
 
+/**
+ * A reusable caption component that styles its children with a block width, a small text size, a mono font, a gray text color, and a centered text alignment.
+ * The component wraps its children in a span element and uses the Balancer component to avoid orphaned words.
+ * @param {ReactNode} children - The children elements to be processed.
+ * @returns {ReactNode} A reusable caption component with its children styled as described above.
+ */
 export function Caption({ children }: { children: ReactNode }) {
   return (
     <span className="block w-full text-xs my-3 font-mono text-gray-500 text-center leading-normal">

@@ -23,6 +23,11 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEarthAmericas, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 library.add(faGithub, faLinkedin, faEarthAmericas, faEnvelope, faPhone);
 
+/**
+ * A curriculum vitae (CV) component, which displays personal information, education, skills,
+ * experience, research publications, honors and awards, projects, certifications, and contact
+ * information.
+ */
 export default function CV() {
   return (
     <main className="p-8 mt-12">

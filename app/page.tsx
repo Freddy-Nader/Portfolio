@@ -9,6 +9,10 @@ import {
   Section
 } from "@/app/components/elements";
 
+/**
+ * The main page component of the website.
+ * @returns A JSX element representing the main page of the website.
+ */
 export default function Home() {
   return (
     <main className="p-8 mt-12">

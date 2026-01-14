@@ -1,5 +1,11 @@
 "use client";
 
+/**
+ * Returns a set of script tags that load the KaTeX library.
+ * The KaTeX library is a popular JavaScript library for rendering mathematical expressions.
+ * The library is loaded from a CDN, and the integrity of the scripts is checked using the "integrity" attribute.
+ * The first script tag loads the KaTeX CSS file, the second script tag loads the KaTeX JavaScript file, and the third script tag loads the auto-render extension of KaTeX.
+ */
 export function HeadKatex() {
   return (
     <>

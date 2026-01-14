@@ -1,9 +1,21 @@
+"use client"
+
 import { readFile } from "fs/promises";
 import sizeOf from "image-size";
 import NextImage from "next/image";
 import { join } from "path";
 import { Caption } from "./utils";
 
+/**
+ * A wrapper around the NextImage component that handles data URLs and resizes images.
+ * If the width or height of the image is not provided, it will attempt to fetch the image and compute its size.
+ * @param {string} src - The URL of the image to be rendered.
+ * @param {string | null} [alt] - The alt text of the image. If a string, it may contain a percentage sign (e.g. "Image (50%)"), which will be parsed and used to divide the width and height of the image.
+ * @param {number | null} [width] - The width of the image to be rendered.
+ * @param {number | null} [height] - The height of the image to be rendered.
+ * @param {string} [className] - Additional CSS classes to be applied to the component.
+ * @returns {React.ReactElement} A NextImage component with the specified width, height, and alt text.
+ */
 export async function Image({
   src,
   alt: originalAlt,

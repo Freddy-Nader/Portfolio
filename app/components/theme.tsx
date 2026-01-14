@@ -6,6 +6,12 @@ import {
   ThemeProvider as NextThemesProvider
 } from "next-themes"
 
+/**
+ * A wrapper component for the NextThemesProvider.
+ * It provides a convenient way to wrap your app with the theme provider.
+ * @param {React.ComponentProps<typeof NextThemesProvider>} props - Props to be passed to the NextThemesProvider.
+ * @returns {React.ReactElement} A NextThemesProvider component with the provided props.
+ */
 export function ThemeProvider({
   children,
   ...props
@@ -13,6 +19,10 @@ export function ThemeProvider({
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
 
+/**
+ * A component that toggles the theme when the 'l' or 'L' key is pressed.
+ * @returns {null} A component that toggles the theme when the 'l' or 'L' key is pressed.
+ */
 export function ThemeToggle() {
   const { setTheme } = useTheme()
 

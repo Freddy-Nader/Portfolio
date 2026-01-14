@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+/**
+ * A Next.js page component that displays a 404 error page.
+ * @returns A JSX element representing the 404 error page.
+ */
 export default function NotFound() {
   return (
     <div className="m-0 p-0 h-screen w-screen flex flex-col justify-center items-center text-center overflow-hidden">
