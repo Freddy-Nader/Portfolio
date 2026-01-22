@@ -8,6 +8,14 @@ import {
   P,
   Section
 } from "@/app/components/elements";
+import { Contact } from "@/app/cv/elements";
+
+// FontAwesome Icons
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEarthAmericas, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+library.add(faGithub, faLinkedin, faEarthAmericas, faEnvelope, faPhone);
 
 /**
  * The main page component of the website.
@@ -15,7 +23,7 @@ import {
  */
 export default function Home() {
   return (
-    <main className="p-8 mt-12">
+    <main className="pt-8 px-8 pb-0 mt-12">
       <Section>
         <A href="/">
           <H1 id="me">Hi, I'm Freddy</H1>
@@ -26,15 +34,13 @@ export default function Home() {
         <P>As Steve Jobs <A href="https://putsomethingback.stevejobsarchive.com/">
           put it
         </A>, I also want to <Em>put something back</Em>.</P>
-        <P>You can <A href="/cv">see</A> or <A href="/f/cv.pdf" target="_blank">download</A> my CV.</P>
-        <P>You can follow me on <A href="https://www.linkedin.com/in/alfredo-nader/">
-          LinkedIn
-        </A> and <A href="https://github.com/Freddy-Nader/">
-            GitHub
-          </A>. I read every <A href="mailto:alfredonaderz@gmail.com">
-            email
-          </A>.
-        </P>
+        <P>You can <A href="/cv">
+          see
+        </A> or <A href="/f/cv.pdf" target="_blank">
+          download
+        </A> my CV. You can also <A href="/#contact">
+          contact me
+        </A>.</P>
       </Section>
 
       <Section>
@@ -46,11 +52,11 @@ export default function Home() {
               estudio.so
             </A>
           </H3>
-          <P>Teachers often have many administrative responsibilities. Sometimes, these administrative responsibilities 
-            can lead to a decline in the quality of their teaching. Using <A href="https://estudioso.anader.xyz">
+          <P>Teachers often have many administrative responsibilities. Sometimes, these responsibilities can lead to
+            a decline in the quality of their teaching. Using <A href="https://estudioso.anader.xyz">
               estudio.so
-            </A>, teachers can focus their time and energy on what matters: providing a quality education to all their students. 
-            The product ensures teachers teach better and students learn better.
+            </A>, teachers can focus their time and energy on what matters: providing a quality education to all their
+            students. The product ensures teachers teach better and students learn better.
           </P>
         </div>
 
@@ -67,7 +73,7 @@ export default function Home() {
 
         <div className="block">
           <H3 className="external-link">
-            <A href="/f/2401.04026v1.pdf">
+            <A href="/f/2401.04026v1.pdf" target="_blank">
               Closed-Form Formula for the Partition Function and Related Functions
             </A>
           </H3>
@@ -91,6 +97,32 @@ export default function Home() {
             Dedekind's psi function
           </A>.
         </P>
+      </Section>
+
+      <Section>
+        <H1 id="contact">Contact</H1>
+        <div className="flex flex-col">
+          <Contact
+            href="mailto:alfredonaderz@gmail.com"
+            text="alfredonaderz@gmail.com"
+            icon={faEnvelope}
+          />
+          <Contact
+            href="tel:+525525307307"
+            text="+52 55 2530 7307"
+            icon={faPhone}
+          />
+          <Contact
+            href="https://github.com/Freddy-Nader"
+            text="Freddy-Nader"
+            icon={faGithub}
+          />
+          <Contact
+            href="https://www.linkedin.com/in/alfredo-nader/"
+            text="Alfredo-Nader"
+            icon={faLinkedin}
+          />
+        </div>
       </Section>
     </main>
   );

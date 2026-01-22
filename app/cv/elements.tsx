@@ -12,11 +12,14 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 /**
  * A reusable CVSection component that displays a title with uppercase letters and children below it,
  * with a space of 4 units between each child.
- * @param {{ title: string, children: React.ReactNode }} props - The props of the component.
+ * @param {string} props.title - The title of the section.
+ * @param {React.ReactNode} props.children - The children of the section.
  * @returns {React.ReactElement} A reusable CVSection component.
  */
-export const CVSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <Section>
+export const CVSection = ({
+  title, children, ...props
+}: { title: string; children: React.ReactNode;[key: string]: any }): React.ReactElement => (
+  <Section {...props}>
     <H2 className="uppercase">{title}</H2>
     <div className="space-y-4">
       {children}
@@ -44,7 +47,8 @@ export const CVEntry = ({
   subtitle,
   subtitleMobile,
   children,
-  className = ""
+  className = "",
+  ...props
 }: {
   title: React.ReactNode;
   titleMobile?: React.ReactNode;
@@ -53,6 +57,7 @@ export const CVEntry = ({
   subtitleMobile?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
+  [key: string]: any;
 }) => {
   const titleClass = "!mt-0 !mb-0 !leading-[1.2] md:!mb-[0.3em] sm:!mb-[0.1em]";
   const titleElement = <>
@@ -79,7 +84,10 @@ export const CVEntry = ({
   </>
 
   return (
-    <div className={`mb-3 ${className}`}>
+    <div
+      className={`mb-3 ${className}`}
+      {...props}
+    >
       <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-0">
         {titleElement}
         {date && <div className="text-sm text-[var(--text-secondary)] tabular-nums shrink-0 sm:ml-4">{date}</div>}
@@ -99,14 +107,22 @@ export const CVEntry = ({
  */
 export const Language = ({
   lang,
-  level
+  level,
+  ...props
 }: {
   lang: string;
   level: string;
-}) => (
-  <div className="flex flex-col">
-    <H3 className="!mt-0 !mb-0 !leading-[1.2] !mb-[0.3em]">{lang}</H3>
-    {level && <div className="text-sm text-[var(--text-secondary)] shrink-0">{level}</div>}
+  [key: string]: any;
+}): React.ReactElement => (
+  <div className="flex flex-col" {...props}>
+    <H3 className="!mt-0 !mb-0 !leading-[1.2] !mb-[0.3em]">
+      {lang}
+    </H3>
+    {level && (
+      <div className="text-sm text-[var(--text-secondary)] shrink-0">
+        {level}
+      </div>
+    )}
   </div>
 )
 
@@ -120,15 +136,18 @@ export const Language = ({
 export const Contact = ({
   href,
   text = "",
-  icon
+  icon,
+  ...props
 }: {
   href: string;
   text?: string;
   icon?: IconProp;
-}) => (
+  [key: string]: any;
+}): React.ReactElement => (
   <A
     className="border-none w-fit btn"
     href={href}
+    {...props}
   >
     {icon && <FontAwesomeIcon className="mr-2" icon={icon} />}
     {text || href}

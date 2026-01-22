@@ -30,7 +30,7 @@ library.add(faGithub, faLinkedin, faEarthAmericas, faEnvelope, faPhone);
  */
 export default function CV() {
   return (
-    <main className="p-8 mt-12">
+    <main className="p-8 pt-20 mt-0">
       <Header className="flex flex-row justify-between">
         <div>
           <UL className="bread">
@@ -198,11 +198,11 @@ export default function CV() {
         />
       </CVSection>
 
-      <CVSection title="Contact">
+      <CVSection title="Contact" id="contact">
         <div className="flex flex-col">
           <Contact
-            href="mailto:anader@anahuac.mx"
-            text="anader@anahuac.mx"
+            href="mailto:alfredonaderz@gmail.com"
+            text="alfredonaderz@gmail.com"
             icon={faEnvelope}
           />
           <Contact
