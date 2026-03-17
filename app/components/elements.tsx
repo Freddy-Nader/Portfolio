@@ -300,7 +300,7 @@ export function H1({
   return (
     <h1
       id={id}
-      className={`text-[2rem] font-bold tracking-[-0.02em] mb-4 text-[#111111] dark:text-[#ededed] max-sm:text-[2rem] ${className}`}
+      className={`text-[2rem] font-bold tracking-[-0.02em] mb-4 text-[#111111] dark:text-[#ededed] ${className}`}
       {...props}
     >
       {withHeadingId(children)}
