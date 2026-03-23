@@ -8,17 +8,6 @@
 # DS_Store
 .DS_Store
 
-# Agents files that are used as soft links to `AGENTS.md` and `.agentsignore`
-CLAUDE.md
-.claude
-.claudeignore
-GEMINI.md
-.gemini
-.geminiignore
-.specify
-.codex
-.aiexclude
-
 # Encryption files
 *.enc
 
@@ -74,3 +63,4 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local
