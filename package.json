@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "tex": "./scripts/tex",
+    "cv:build": "./scripts/build-cv.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",

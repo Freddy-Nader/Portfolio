@@ -1,0 +1,156 @@
+#!/bin/sh
+
+set -eu
+
+ROOT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+CACHE_FILE="/tmp/tex_files.json"
+WATCH_MODE=1
+COLOR_RED="$(printf '\033[31m')"
+COLOR_GREEN="$(printf '\033[32m')"
+COLOR_YELLOW="$(printf '\033[33m')"
+COLOR_RESET="$(printf '\033[0m')"
+
+print_error() {
+  printf '%sError:%s %s\n' "$COLOR_RED" "$COLOR_RESET" "$1" >&2
+}
+
+print_missing_dependency() {
+  name="$1"
+  fix="$2"
+
+  printf '%sError:%s %s is not installed. Run\n' "$COLOR_RED" "$COLOR_RESET" "$name" >&2
+  printf '  %s%s%s\n' "$COLOR_GREEN" "$fix" "$COLOR_RESET" >&2
+}
+
+print_latexmk_path_hint() {
+  printf '%sError:%s latexmk exists, but it is not in the executable paths. Run\n' "$COLOR_RED" "$COLOR_RESET" >&2
+  printf '  %sexport PATH="/Library/TeX/texbin:$PATH"%s\n' "$COLOR_GREEN" "$COLOR_RESET" >&2
+}
+
+print_latexmk_install_hint() {
+  printf '%sError:%s mactex-no-gui is installed, but latexmk was not found at /Library/TeX/texbin/latexmk. Reinstall MacTeX or inspect the TeX installation.\n' "$COLOR_RED" "$COLOR_RESET" >&2
+  printf '  %sbrew reinstall --cask mactex-no-gui%s\n' "$COLOR_GREEN" "$COLOR_RESET" >&2
+}
+
+require_latexmk() {
+  if command -v latexmk >/dev/null 2>&1; then
+    return 0
+  fi
+
+  if [ -x /Library/TeX/texbin/latexmk ]; then
+    print_latexmk_path_hint
+    exit 1
+  fi
+
+  if command -v brew >/dev/null 2>&1 && brew list --cask mactex-no-gui >/dev/null 2>&1; then
+    print_latexmk_install_hint
+    exit 1
+  fi
+
+  print_missing_dependency "latexmk" "brew install --cask mactex-no-gui"
+  exit 1
+}
+
+require_command() {
+  name="$1"
+  fix="$2"
+
+  if ! command -v "$name" >/dev/null 2>&1; then
+    print_missing_dependency "$name" "$fix"
+    exit 1
+  fi
+}
+
+update_cache() {
+  tex_files="$(cd "$ROOT_DIR" && rg --files -g '*.tex')"
+
+  printf '%s\n' "$tex_files" | node -e '
+    const fs = require("fs");
+    const input = fs.readFileSync(0, "utf8")
+      .split("\n")
+      .map((line) => line.trim())
+      .filter(Boolean);
+    fs.writeFileSync(process.argv[1], JSON.stringify(input, null, 2) + "\n");
+  ' "$CACHE_FILE"
+
+  printf '%s\n' "$tex_files"
+}
+
+pick_file() {
+  require_command fzf "brew install fzf"
+  require_command rg "brew install ripgrep"
+
+  tex_files="$(update_cache)"
+
+  if [ -z "$tex_files" ]; then
+    print_error "no .tex files were found under $ROOT_DIR."
+    exit 1
+  fi
+
+  selected_file="$(printf '%s\n' "$tex_files" | fzf --prompt='tex > ' --height=40% --layout=reverse --border)"
+
+  if [ -z "$selected_file" ]; then
+    print_error "no file selected."
+    exit 1
+  fi
+
+  printf '%s\n' "$selected_file"
+}
+
+compile_file() {
+  input_path="$1"
+
+  case "$input_path" in
+    /*) tex_path="$input_path" ;;
+    *) tex_path="$ROOT_DIR/$input_path" ;;
+  esac
+
+  if [ ! -f "$tex_path" ]; then
+    print_error "file not found: $input_path"
+    exit 1
+  fi
+
+  case "$tex_path" in
+    *.tex) ;;
+    *)
+      print_error "expected a .tex file, got: $input_path"
+      exit 1
+      ;;
+  esac
+
+  tex_dir="$(CDPATH= cd -- "$(dirname -- "$tex_path")" && pwd)"
+  tex_name="$(basename -- "$tex_path")"
+  pdf_name="${tex_name%.tex}.pdf"
+
+  cd "$tex_dir"
+
+  if [ "$WATCH_MODE" -eq 1 ]; then
+    latexmk -pvc -pdf -interaction=nonstopmode "$tex_name"
+  else
+    latexmk -pdf -interaction=nonstopmode "$tex_name"
+  fi
+
+  echo "Built $tex_dir/$pdf_name"
+}
+
+if [ "${1-}" = "--" ]; then
+  shift
+fi
+
+if [ "${1-}" = "--watch" ]; then
+  WATCH_MODE=1
+  shift
+elif [ "${1-}" = "--once" ]; then
+  WATCH_MODE=0
+  shift
+fi
+
+if [ "$#" -gt 0 ]; then
+  require_latexmk
+  compile_file "$1"
+else
+  require_command node "brew install node"
+  selected_file="$(pick_file)"
+  require_latexmk
+  compile_file "$selected_file"
+fi
