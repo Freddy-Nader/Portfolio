@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+This project is Alfredo Nader's personal portfolio website. It is a small Next.js application that presents core profile information, experiments, writing, and a downloadable CV.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 with the App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Font Awesome and Lucide icons
+- Vercel Analytics and Speed Insights
+
+## Requirements
+
+- Node.js 20+ recommended
+- `pnpm`
+- A LaTeX distribution with `latexmk` if you want to rebuild the CV PDF
+
+## Install
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run the local dev server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev
+```
 
-## Learn More
+Then open `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
+## Available Commands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+pnpm build
+pnpm start
+pnpm lint
+pnpm tex -- app/cv/cv.tex
+npm run tex -- app/cv/cv.tex
+pnpm tex -- --once app/cv/cv.tex
+npm run tex -- --watch app/cv/cv.tex
+pnpm cv:build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`pnpm tex -- path/to/file.tex` watches the file and recompiles it automatically when it changes.
 
-## Deploy on Vercel
+`npm run tex -- path/to/file.tex` runs the same executable through npm.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`--watch` is explicit watch mode. It is also the default.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`--once` disables watching and performs a single compile.
+
+If you run `pnpm tex` with no file argument, the script scans the repository for `.tex` files, writes the index to `/tmp/tex_files.json`, and opens an `fzf` picker so you can choose one interactively.
+
+`pnpm cv:build` compiles `app/cv/cv.tex` and copies the generated PDF to `public/f/cv.pdf`.
+
+Direct executable usage:
+
+```bash
+./scripts/tex app/cv/cv.tex
+./scripts/tex --watch app/cv/cv.tex
+./scripts/tex --once app/cv/cv.tex
+./scripts/tex
+```
+
+Dependency installs on macOS:
+
+```bash
+brew install --cask mactex-no-gui
+brew install fzf
+brew install ripgrep
+brew install node
+```
+
+## Project Structure
+
+```text
+app/          Next.js routes, UI, CV source, and supporting components
+public/       Static assets such as images and downloadable files
+scripts/      Small project scripts, including TeX helpers
+```
+
+Notable paths:
+
+- `app/page.tsx`: homepage content
+- `app/cv/cv.tex`: LaTeX source for the CV
+- `app/cv/resume.cls`: custom LaTeX class used by the CV
+- `public/f/cv.pdf`: built CV PDF served by the site
+
+## Dependencies
+
+Main runtime dependencies:
+
+- `next`, `react`, `react-dom`
+- `tailwind-merge`, `class-variance-authority`, `clsx`
+- `@fortawesome/*`, `lucide-react`
+- `@vercel/analytics`, `@vercel/speed-insights`
+- `sharp`, `next-themes`, `react-wrap-balancer`
+
+Main development dependencies:
+
+- `typescript`
+- `eslint`, `eslint-config-next`
+- `tailwindcss`, `@tailwindcss/postcss`
+- `@types/node`, `@types/react`, `@types/react-dom`
