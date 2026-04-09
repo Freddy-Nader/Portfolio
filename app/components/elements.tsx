@@ -3,6 +3,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Caption, withHeadingId } from "./utils";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 /**
  * A reusable anchor tag component that handles internal and external links.
@@ -28,8 +31,8 @@ export function A({
   [key: string]: any
 }): React.ReactElement {
   const classes = `
-    text-[#111111] dark:text-[#ededed]
-    border-b border-dashed border-[#111111] dark:border-[#ededed]
+    text-[var(--link-color)]
+    border-b border-dashed border-[var(--link-border)]
     transition-all duration-200 ease-in-out
     hover:bg-black/10 dark:hover:bg-white/10
     hover:rounded-[4px]
@@ -300,7 +303,7 @@ export function H1({
   return (
     <h1
       id={id}
-      className={`text-[2rem] font-bold tracking-[-0.02em] mb-4 text-[#111111] dark:text-[#ededed] ${className}`}
+      className={`text-[2rem] font-bold tracking-[-0.02em] mb-4 text-[var(--heading-color)] ${className}`}
       {...props}
     >
       {withHeadingId(children)}
@@ -330,7 +333,7 @@ export function H2({
   return (
     <h2
       id={id}
-      className={`group font-bold text-[1.5rem] mt-6 mb-3 text-[#111111] dark:text-[#ededed] relative ${className}`}
+      className={`group font-bold text-[1.5rem] mt-6 mb-3 text-[var(--heading-color)] relative ${className}`}
       {...props}
     >
       {withHeadingId(children)}
@@ -360,7 +363,7 @@ export function H3({
   return (
     <h3
       id={id}
-      className={`group font-semibold text-[1.2rem] mt-4 mb-2 text-[#111111] dark:text-[#ededed] relative ${className}`}
+      className={`group font-semibold text-[1.2rem] mt-4 mb-2 text-[var(--heading-color)] relative ${className}`}
       {...props}
     >
       {withHeadingId(children)}
@@ -376,20 +379,38 @@ export function H3({
  * @returns {React.ReactElement} A header component with its children wrapped in a max-width container.
  */
 export function Header({
-  children,
   className = "",
+  left = undefined,
+  right = undefined,
   ...props
 }: {
-  children: React.ReactNode;
   className?: string;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
   [key: string]: any
 }): React.ReactElement {
+  const ulClassName = "bread mb-4 pl-8 list-none list-outside text-[#555555] dark:text-[#a1a1a1] space-y-[0px] !gap-0 sm:!gap-1";
   return (
-    <header
-      className={`max-w-[680px] mx-auto mb-8 flex flex-col items-start gap-4 max-sm:hidden ${className}`}
-      {...props}
-    >
-      {children}
+    <header>
+      <nav
+        aria-label="Primary"
+        className={`max-w-[680px] py-8 mx-auto flex flex-row justify-between items-start gap-4 ${className}`}
+        {...props}
+      >
+        <nav className="bread">
+          <ul className={ulClassName}>
+            <li className="mb-2"><A className="btn" href="/"><Strong>Alredo Nader</Strong></A></li>
+            {left}
+          </ul>
+        </nav>
+        <div>
+          <ul className={ulClassName}>
+            {right && <LI>{right}</LI>}
+            <LI><Icon icon={faGithub} href="https://github.com/Freddy-Nader" /></LI>
+            <LI><Icon icon={faLinkedin} href="https://www.linkedin.com/in/alfredo-nader/" /></LI>
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 }
@@ -410,6 +431,47 @@ export function HR({
       className={`my-8 text-center after:content-['﹡﹡﹡'] after:text-sm after:text-center after:inline text-[#555555] dark:text-[#a1a1a1] ${className}`}
       {...props}
     />
+  );
+}
+
+/**
+ * A reusable Icon component that displays a Font Awesome icon with a link.
+ * The component can be customized with additional CSS classes by setting the `className` prop.
+ * The component also accepts an `href` prop to set the link of the icon, and a `size` prop to set the size of the icon.
+ * The `size` prop can be set to "sm", "lg", "xl", or "2xl".
+ * @param {IconProp} icon - The Font Awesome icon to be displayed.
+ * @param {string} [className] - Additional CSS classes to be applied to the component.
+ * @param {string} [href] - The link of the icon.
+ * @param {"sm" | "lg" | "xl" | "2xl"} [size] - The size of the icon.
+ * @returns {React.ReactElement} A reusable Icon component that displays a Font Awesome icon with a link.
+ */
+export function Icon({
+  icon,
+  className = "",
+  href,
+  size = "lg",
+  ...props
+}: {
+  icon: IconProp;
+  className?: string;
+  href?: string;
+  size?: "sm" | "lg" | "xl" | "2xl";
+  [key: string]: any
+}): React.ReactElement {
+  return (
+    <a
+      className="bg-transparent border-none text-[var(--text-primary)] cursor-pointer no-underline rounded-full ring-offset-[var(--bg-primary)] transition-colors flex items-center justify-center w-fit h-fit p-[4px] hover:bg-black/10 dark:hover:bg-white/10"
+      href={href || ""}
+      target={href ? "_blank" : "_self"}
+      rel={href ? "noopener noreferrer" : undefined}
+    >
+      <FontAwesomeIcon
+        icon={icon}
+        className={className}
+        size={size}
+        {...props}
+      />
+    </a>
   );
 }
 
@@ -562,6 +624,20 @@ export const Snippet = ({
     {caption != null ? <Caption>{caption}</Caption> : null}
   </div>
 );
+
+export function Strong({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+  [key: string]: any;
+}): React.ReactElement {
+  return (
+    <strong {...props}>
+      {children}
+    </strong>
+  );
+}
 
 /**
  * A reusable unordered list component that styles its children with a margin bottom of 4px, a left padding of 8px, a disc list style, and a dark text color.

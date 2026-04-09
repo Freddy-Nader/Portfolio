@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ThemeProvider, ThemeToggle } from "@/app/components/theme"
 import { Analytics } from "@/app/components/analytics";
 import { KatexInit } from "@/app/components/katex-init";
 import { HeadKatex } from "@/app/components/head-katex"
@@ -59,7 +58,7 @@ export const metadata: Metadata = {
  *
  * It renders the HTML structure of the website, including the head and body tags.
  * The head tag contains the favicon, Google Analytics script, and the Katex script.
- * The body tag contains the noscript tag for Google Analytics, the theme provider, Katex initialization, the theme toggle, and the children of the component.
+ * The body tag contains the noscript tag for Google Analytics, Katex initialization, and the children of the component.
  *
  * The component also sets the default CSS variables for the website, such as the background color, text color, font stack, leading, text size, text foreground, and transition effects.
  *
@@ -74,7 +73,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -92,16 +90,11 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-        >
-          <KatexInit />
-          <ThemeToggle />
+        <KatexInit />
+        <div className="px-8 py-4">
           {children}
-          <Footer />
-        </ThemeProvider>
+        </div>
+        <Footer />
       </body>
     </html>
   );
