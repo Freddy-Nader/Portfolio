@@ -406,8 +406,8 @@ export function Header({
         <div>
           <ul className={ulClassName}>
             {right && <LI>{right}</LI>}
-            <LI><Icon icon={faGithub} href="https://github.com/Freddy-Nader" /></LI>
             <LI><Icon icon={faLinkedin} href="https://www.linkedin.com/in/alfredo-nader/" /></LI>
+            <LI><Icon icon={faGithub} href="https://github.com/Freddy-Nader" /></LI>
           </ul>
         </div>
       </nav>
