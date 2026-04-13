@@ -141,7 +141,7 @@ export default function CV() {
 
         <CVSection title="Projects">
           <CVEntry
-            title="Personal Porfolio Website"
+            title="Personal Portfolio Website"
             date="Dec 2025 — Present"
           >
             I needed a place to display all my work, experiences, and blog entries. That&apos;s why I
@@ -205,8 +205,8 @@ export default function CV() {
         <CVSection title="Contact" id="contact">
           <div className="flex flex-col">
             <Contact
-              href="mailto:anader@anahuac.mx"
-              text="anader@anahuac.mx"
+              href="mailto:alfredonaderz@gmail.com"
+              text="alfredonaderz@gmail.com"
               icon={faEnvelope}
             />
             <Contact
