@@ -93,7 +93,7 @@ export const CVEntry = ({
         {date && <div className="text-sm text-[var(--text-secondary)] tabular-nums shrink-0 sm:ml-4">{date}</div>}
       </div>
       {subtitleElement}
-      {children && <div className="text-[var(--text-secondary)] text-sm leading-relaxed">{children}</div>}
+      {children && <div className="text-[var(--text-secondary)] text-sm leading-relaxed pt-1">{children}</div>}
     </div>
   )
 };

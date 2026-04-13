@@ -73,6 +73,9 @@ next-env.d.ts
 
 # (cf. https://github.com/github/gitignore/blob/main/TeX.gitignore)
 
+## PDF files under `tex/` (there should be a hard link at `public/f/`)
+tex/**/*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

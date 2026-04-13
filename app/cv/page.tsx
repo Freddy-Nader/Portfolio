@@ -7,6 +7,7 @@ import {
   LI,
   P,
   Section,
+  UL,
 } from "@/app/components/elements";
 import {
   CVSection,
@@ -49,6 +50,13 @@ export default function CV() {
 
         <CVSection title="Education">
           <CVEntry
+            title="Exchange Studies in Applied Computer Science"
+            titleMobile="Exchange Studies in Applied Computer Science"
+            date="Mar 2026 — Aug 2026"
+            subtitle="Faculty of Business Informatics & Applied Computer Science, Otto-Friedrich-Universität Bamberg, Germany"
+            subtitleMobile="Otto-Friedrich-Universität Bamberg, Germany"
+          />
+          <CVEntry
             title="Minor in User Interfaces (UI) and Experience Design (XD)"
             titleMobile="Minor in UI and XD"
             date="Jan 2025 — Dec 2028"
@@ -74,32 +82,18 @@ export default function CV() {
             date="Aug 2020 — Jul 2023"
             subtitle="Eton School Mexico, Mexico City, Mexico"
           />
-          <CVEntry
-            title="Secondary School Certificate (SSC)"
-            titleMobile="Secondary School Certificate"
-            date="Aug 2017 — Jul 2020"
-            subtitle="Eton School Mexico, Mexico City, Mexico"
-          />
-          <CVEntry
-            title="Primary Education Certificate"
-            date="Aug 2012 — Jul 2017"
-            subtitle="Eton School Mexico, Mexico City, Mexico"
-          />
         </CVSection>
 
         <CVSection title="Skills and Interests">
-          <CVEntry
-            title="Skills"
-            children="Analytical Skills, Business Strategy, Data Analysis, Project Management, Social Media Communications, Software Architecture, Software Design, Software Infrastructure, Web Design, Web Engineering"
-          />
-          <CVEntry
-            title="Interests"
-            children="Business Engineering, Combinatorics, Experience Design, Full-Stack Development, Human Behavior, Languages, Number Theory, Programming, Software Engineering, Sports, UI, UX"
-          />
-          <CVEntry
-            title="Programming Languages"
-            children="Arduino, BASIC, C, C++, CSS, GAMBAS, HTML, Java, JavaScript, LaTeX, Mathematica, MongoDB, NextJS, PHP, Python, Shell, SQL, TypeScript"
-          />
+          <CVEntry title="Skills">
+            Analytical Skills, Business Strategy, Data Analysis, Project Management, Social Media Communications, Software Architecture, Software Design, Software Infrastructure, Web Design, Web Engineering
+          </CVEntry>
+          <CVEntry title="Interests">
+            Business Engineering, Combinatorics, Experience Design, Full-Stack Development, Human Behavior, Language Learning (currently studying German, French, and Portuguese), Number Theory, Programming, Software Engineering, Sports, UI, UX
+          </CVEntry>
+          <CVEntry title="Programming Languages">
+            Arduino, BASIC, C, C++, CSS, GAMBAS, HTML, Java, JavaScript, LaTeX, Mathematica, MongoDB, NextJS, PHP, Python, Shell, SQL, TypeScript
+          </CVEntry>
         </CVSection>
 
         <CVSection title="Languages">
@@ -112,13 +106,15 @@ export default function CV() {
 
         <CVSection title="Experience">
           <CVEntry
-            title="Data Analyst at Mindnic"
+            title={<span>Data Analyst at <A href="https://mindnic.net/">Mindnic</A></span>}
             date="Nov 2024 — Feb 2025"
-          />
-          <CVEntry
-            title={<span>Intern at <A href="https://www.ericsson.com">Ericsson</A></span>}
-            date="Nov 2022"
-          />
+          >
+            <UL>
+              <LI>Executed social listening strategies to monitor public sentiment and track trends across diverse social media platforms, news outlets, and mass media.</LI>
+              <LI>Translated large volumes of unstructured data into comprehensive executive presentations, delivering actionable insights to guide client decision-making.</LI>
+              <LI>Uncovered communication opportunities and PR risks that would otherwise go unnoticed through manual analysis, enabling clients to optimize their strategic responses.</LI>
+            </UL>
+          </CVEntry>
         </CVSection>
 
         <CVSection title="Research Publication">
@@ -145,7 +141,7 @@ export default function CV() {
 
         <CVSection title="Projects">
           <CVEntry
-            title="Personal Portfolio Website"
+            title="Personal Porfolio Website"
             date="Dec 2025 — Present"
           >
             I needed a place to display all my work, experiences, and blog entries. That&apos;s why I
@@ -167,7 +163,9 @@ export default function CV() {
 
           <CVEntry
             className="external-link"
-            title={<A href="https://estudioso.anader.xyz">estudio.so</A>}
+            title={<A href="https://estudio.so">
+              estudio.so
+            </A>}
             date="Dec 2024 — Present"
           >
             Teachers (at all levels) often have many administrative responsibilities. Sometimes, these
@@ -178,6 +176,14 @@ export default function CV() {
         </CVSection>
 
         <CVSection title="Certifications">
+          <CVEntry
+            className="external-link"
+            title={<A href="https://learn.nvidia.com/certificates?id=20dOe3VLR0eJb3_a2viC2g">
+              Adding New Knowledge to LLMs
+            </A>}
+            date="Mar 2026"
+            subtitle="Issued by NVIDIA; Credential ID 20dOe3VLR0eJb3_a2viC2g"
+          />
           <CVEntry
             className="external-link"
             title={<A href="https://learn.nvidia.com/certificates?id=ekCku9j-T1yL3tKTtTiwbA">
@@ -199,14 +205,24 @@ export default function CV() {
         <CVSection title="Contact" id="contact">
           <div className="flex flex-col">
             <Contact
-              href="mailto:alfredonaderz@gmail.com"
-              text="alfredonaderz@gmail.com"
+              href="mailto:anader@anahuac.mx"
+              text="anader@anahuac.mx"
               icon={faEnvelope}
             />
             <Contact
               href="tel:+525525307307"
               text="+52 55 2530 7307"
               icon={faPhone}
+            />
+            <Contact
+              href="tel:+4915567218118"
+              text="+49 155 67218118"
+              icon={faPhone}
+            />
+            <Contact
+              href="https://www.anader.xyz"
+              text="anader.xyz"
+              icon={faEarthAmericas}
             />
             <Contact
               href="https://github.com/Freddy-Nader"
@@ -219,11 +235,6 @@ export default function CV() {
               icon={faLinkedin}
             />
           </div>
-        </CVSection>
-
-        <CVSection title="Declaration">
-          <P>I hereby declare that all the details furnished above are true to the best of my
-            knowledge and belief.</P>
         </CVSection>
       </main >
     </>
