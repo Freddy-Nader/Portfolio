@@ -50,37 +50,29 @@ export default function CV() {
 
         <CVSection title="Education">
           <CVEntry
-            title="Exchange Studies in Applied Computer Science"
-            titleMobile="Exchange Studies in Applied Computer Science"
+            title="Exchange Studies in Applied Computer Science" 
             date="Mar 2026 — Aug 2026"
-            subtitle="Faculty of Business Informatics & Applied Computer Science, Otto-Friedrich-Universität Bamberg, Germany"
-            subtitleMobile="Otto-Friedrich-Universität Bamberg, Germany"
+            subtitle="Faculty of Business Informatics & Applied Computer Science, Otto-Friedrich-Universität Bamberg, Germany" subtitleMobile="Otto-Friedrich-Universität Bamberg, Germany"
           />
           <CVEntry
-            title="Minor in User Interfaces (UI) and Experience Design (XD)"
-            titleMobile="Minor in UI and XD"
+            title="Minor in User Interfaces (UI) and Experience Design (XD)" titleMobile="Minor in UI and UX"
             date="Jan 2025 — Dec 2028"
-            subtitle="Faculty of Design, Anáhuac University, Mexico City, Mexico"
-            subtitleMobile="Anáhuac University, Mexico City, Mexico"
+            subtitle="Faculty of Design, Anáhuac University, Mexico City, Mexico" subtitleMobile="Anáhuac University, Mexico City, Mexico"
           />
           <CVEntry
-            title="Bachelor of Engineering in Systems and Information Technology"
-            titleMobile="B.E. in Systems and Information Technology"
+            title="Bachelor of Engineering in Systems and Information Technology" titleMobile="B.E. in Systems and Information Technology"
             date="Aug 2023 — Dec 2028"
-            subtitle="Faculty of Engineering, Anáhuac University, Mexico City, Mexico"
-            subtitleMobile="Anáhuac University, Mexico City, Mexico"
+            subtitle="Faculty of Engineering, Anáhuac University, Mexico City, Mexico" subtitleMobile="Anáhuac University, Mexico City, Mexico"
           />
           <CVEntry
-            title="International Baccalaureate (IB) Certificate"
-            titleMobile="International Baccalaureate Certificate"
+            title="International Baccalaureate (IB) Certificate" titleMobile="International Baccalaureate Certificate"
             date="Aug 2021 — Jul 2023"
-            subtitle="Eton School Mexico, Mexico City, Mexico"
+            subtitle="Eton School Mexico, Mexico City, Mexico" 
           />
           <CVEntry
-            title="Higher Secondary Certificate (HSC), Class 2023"
-            titleMobile="Higher Secondary Certificate"
+            title="Higher Secondary Certificate (HSC), Class 2023" titleMobile="Higher Secondary Certificate"
             date="Aug 2020 — Jul 2023"
-            subtitle="Eton School Mexico, Mexico City, Mexico"
+            subtitle="Eton School Mexico, Mexico City, Mexico" 
           />
         </CVSection>
 
@@ -119,10 +111,7 @@ export default function CV() {
 
         <CVSection title="Research Publication">
           <div className="text-[#555555] dark:text-[#a1a1a1]">
-            Nader, A. (2024, January 8). <em className="italic">Closed-Form Formula for the Partition
-              Function and Related Functions</em> (arXiv:2401.04026). arXiv. <A href="https://doi.org/10.48550/arXiv.2401.04026">
-              https://doi.org/10.48550/arXiv.2401.04026
-            </A>
+            Nader, A. (2024, January 8). <em className="italic">Closed-Form Formula for the Partition Function and Related Functions</em> (arXiv:2401.04026). arXiv. <A href="https://doi.org/10.48550/arXiv.2401.04026">https://doi.org/10.48550/arXiv.2401.04026</A>
           </div>
         </CVSection>
 
@@ -144,34 +133,19 @@ export default function CV() {
             title="Personal Portfolio Website"
             date="Dec 2025 — Present"
           >
-            I needed a place to display all my work, experiences, and blog entries. That&apos;s why I
-            created my portfolio website. It has been the perfect place to practice web design and
-            development, UX, and copywriting. The website is hosted at <A href="https://www.anader.xyz">
-              anader.xyz
-            </A>.
+            I needed a place to display all my work, experiences, and blog entries. That's why I created my portfolio website. It has been the perfect place to practice web design and development, UX, and copywriting. The website is hosted at <A href="https://www.anader.xyz">anader.xyz</A>.
           </CVEntry>
-
           <CVEntry
             title="Ampl"
             date="Aug 2025 — Present"
           >
-            Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw:
-            you pay for something you&apos;re not getting the most out of. Ampl fixes that: it lets you use
-            all AI models with a pay-as-you-go pricing model, so you stop paying for what you&apos;re not
-            using!
+            Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for something you're not getting the most out of. Ampl fixes that: it lets you use all AI models with a pay-as-you-go pricing model, so you stop paying for what you're not using!
           </CVEntry>
-
           <CVEntry
-            className="external-link"
-            title={<A href="https://estudio.so">
-              estudio.so
-            </A>}
+            title="estudio.so"
             date="Dec 2024 — Present"
           >
-            Teachers (at all levels) often have many administrative responsibilities. Sometimes, these
-            duties can lead to a decline in the quality of their teaching. I am building several software
-            tools so that teachers can focus their time and energy on what matters: providing quality
-            education. Teaching should be about teaching, not about managing.
+            Teachers (at all levels) often have many administrative responsibilities. Sometimes, these duties can lead to a decline in the quality of their teaching. I am building several software tools so that teachers can focus their time and energy on what matters: providing quality education. Teaching should be about teaching, not about managing.
           </CVEntry>
         </CVSection>
 

@@ -1,0 +1,194 @@
+{
+  "name": "Alfredo Nader Zavala",
+  "location": "Mexico City, Mexico",
+  "contact": {
+    "email": "alfredonaderz@gmail.com",
+    "phone": [
+      {
+        "value": "+525525307307",
+        "print": "+52 55 2530 7307"
+      },
+      {
+        "value": "+4915567218118",
+        "print": "+49 155 67218118"
+      }
+    ],
+    "website": "anader.xyz",
+    "github": "Freddy-Nader",
+    "linkedin": {
+      "name": "Alfredo-Nader",
+      "username": "alfredo-nader"
+    }
+  },
+  "education": [
+    {
+      "title": "Exchange Studies in Applied Computer Science",
+      "date": "Mar 2026 — Aug 2026",
+      "institution": "Faculty of Business Informatics & Applied Computer Science, Otto-Friedrich-Universität Bamberg, Germany",
+      "institutionMobile": "Otto-Friedrich-Universität Bamberg, Germany"
+    },
+    {
+      "title": "Minor in User Interfaces (UI) and Experience Design (XD)",
+      "titleMobile": "Minor in UI and UX",
+      "date": "Jan 2025 — Dec 2028",
+      "institution": "Faculty of Design, Anáhuac University, Mexico City, Mexico",
+      "institutionMobile": "Anáhuac University, Mexico City, Mexico"
+    },
+    {
+      "title": "Bachelor of Engineering in Systems and Information Technology",
+      "titleMobile": "B.E. in Systems and Information Technology",
+      "date": "Aug 2023 — Dec 2028",
+      "institution": "Faculty of Engineering, Anáhuac University, Mexico City, Mexico",
+      "institutionMobile": "Anáhuac University, Mexico City, Mexico"
+    },
+    {
+      "title": "International Baccalaureate (IB) Certificate",
+      "titleMobile": "International Baccalaureate Certificate",
+      "date": "Aug 2021 — Jul 2023",
+      "institution": "Eton School Mexico, Mexico City, Mexico"
+    },
+    {
+      "title": "Higher Secondary Certificate (HSC), Class 2023",
+      "titleMobile": "Higher Secondary Certificate",
+      "date": "Aug 2020 — Jul 2023",
+      "institution": "Eton School Mexico, Mexico City, Mexico"
+    }
+  ],
+  "skillsInterests": {
+    "skills": [
+      "Analytical Skills",
+      "Business Strategy",
+      "Data Analysis",
+      "Project Management",
+      "Social Media Communications",
+      "Software Architecture",
+      "Software Design",
+      "Software Infrastructure",
+      "Web Design",
+      "Web Engineering"
+    ],
+    "interests": [
+      "Business Engineering",
+      "Combinatorics",
+      "Experience Design",
+      "Full-Stack Development",
+      "Human Behavior",
+      "Language Learning (currently studying German, French, and Portuguese)",
+      "Number Theory",
+      "Programming",
+      "Software Engineering",
+      "Sports",
+      "UI",
+      "UX"
+    ],
+    "programmingLanguages": [
+      "Arduino",
+      "BASIC",
+      "C",
+      "C++",
+      "CSS",
+      "GAMBAS",
+      "HTML",
+      "Java",
+      "JavaScript",
+      "LaTeX",
+      "Mathematica",
+      "MongoDB",
+      "NextJS",
+      "PHP",
+      "Python",
+      "Shell",
+      "SQL",
+      "TypeScript"
+    ]
+  },
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "Native Language"
+    },
+    {
+      "name": "English",
+      "level": "Second Language"
+    },
+    {
+      "name": "Italian",
+      "level": "Professional Working Proficiency"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Data Analyst at Mindnic",
+      "url": "https://mindnic.net/",
+      "date": "Nov 2024 — Feb 2025",
+      "points": [
+        "Executed social listening strategies to monitor public sentiment and track trends across diverse social media platforms, news outlets, and mass media.",
+        "Translated large volumes of unstructured data into comprehensive executive presentations, delivering actionable insights to guide client decision-making.",
+        "Uncovered communication opportunities and PR risks that would otherwise go unnoticed through manual analysis, enabling clients to optimize their strategic responses."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "author": "Nader, A.",
+      "year": "2024",
+      "month": "January",
+      "day": "8",
+      "title": "Closed-Form Formula for the Partition Function and Related Functions",
+      "arxiv": "2401.04026",
+      "doi": "https://doi.org/10.48550/arXiv.2401.04026"
+    }
+  ],
+  "honors": [
+    {
+      "title": "1st Place in the 5th Alan Turing National Programming Contest",
+      "date": "Dec 2022",
+      "issuer": "Issued by Anáhuac University"
+    },
+    {
+      "title": "Premio Contacto Banxico",
+      "date": "Dec 2021",
+      "issuer": "Issued by Banco de México"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Personal Portfolio Website",
+      "date": "Dec 2025 — Present",
+      "description": "I needed a place to display all my work, experiences, and blog entries. That's why I created my portfolio website. It has been the perfect place to practice web design and development, UX, and copywriting. The website is hosted at anader.xyz.",
+      "url": "https://www.anader.xyz"
+    },
+    {
+      "title": "Ampl",
+      "date": "Aug 2025 — Present",
+      "description": "Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for something you're not getting the most out of. Ampl fixes that: it lets you use all AI models with a pay-as-you-go pricing model, so you stop paying for what you're not using!",
+      "url": "https://ampl.xyz"
+    },
+    {
+      "title": "estudio.so",
+      "date": "Dec 2024 — Present",
+      "description": "Teachers (at all levels) often have many administrative responsibilities. Sometimes, these duties can lead to a decline in the quality of their teaching. I am building several software tools so that teachers can focus their time and energy on what matters: providing quality education. Teaching should be about teaching, not about managing.",
+      "url": "https://estudio.so"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Adding New Knowledge to LLMs",
+      "date": "Mar 2026",
+      "issuer": "Issued by NVIDIA; Credential ID 20dOe3VLR0eJb3_a2viC2g",
+      "url": "https://learn.nvidia.com/certificates?id=20dOe3VLR0eJb3_a2viC2g"
+    },
+    {
+      "title": "Building LLM Applications With Prompt Engineering",
+      "date": "Nov 2025",
+      "issuer": "Issued by NVIDIA; Credential ID ekCku9j-T1yL3tKTtTiwbA",
+      "url": "https://learn.nvidia.com/certificates?id=ekCku9j-T1yL3tKTtTiwbA"
+    },
+    {
+      "title": "Fundamentals of Accelerated Data Science",
+      "date": "Nov 2025",
+      "issuer": "Issued by NVIDIA; Credential ID jGHnzwTDRTSHNq5Gg6cX1Q",
+      "url": "https://learn.nvidia.com/certificates?id=jGHnzwTDRTSHNq5Gg6cX1Q"
+    }
+  ]
+}
