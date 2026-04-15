@@ -9,7 +9,7 @@
  */
 export function Table({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <table className={`overflow-x-auto w-full border-collapse mt-4 text-[0.95rem]`}>
+    <table className={`overflow-x-auto w-full border-collapse mt-4 text-[0.95rem] ${className}`}>
       {children}
     </table>
   );

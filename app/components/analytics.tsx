@@ -39,6 +39,7 @@ export function Analytics() {
       <AnalyticsComponent />
       <SpeedInsights />
       <Script
+        id="google-tag-manager-script"
         src="https://www.googletagmanager.com/gtag/js?id=G-0HPC1ETJ35"
         strategy="afterInteractive"
       />
@@ -49,6 +50,7 @@ export function Analytics() {
         {`!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-WS2F5Q3W",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer");`}
       </Script>
       <Script
+        id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

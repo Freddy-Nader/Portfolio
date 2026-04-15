@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { ReactNode, ComponentPropsWithoutRef } from "react";
 import { Caption, withHeadingId } from "./utils";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
  * @param {ReactNode} children - The children of the component.
  * @param {string} [className] - Additional CSS classes to be applied to the component.
  * @param {string} href - The href of the link.
- * @param {{[key: string]: any}} props - Additional props to be passed to the component.
+ * @param {ComponentPropsWithoutRef<"a">} props - Additional props to be passed to the component.
  * @returns {React.ReactElement} A reusable anchor tag component that handles internal and external links.
  */
 export function A({
@@ -28,8 +28,7 @@ export function A({
   children: React.ReactNode;
   className?: string;
   href: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"a">): React.ReactElement {
   const classes = `
     text-[var(--link-color)]
     border-b border-dashed border-[var(--link-border)]
@@ -89,8 +88,7 @@ export function Blockquote({
 }: {
   children: ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"blockquote">): React.ReactElement {
   return (
     <blockquote
       className={`my-5 text-[#555555] dark:text-[#a1a1a1] pl-3 border-l-4 border-[#e0e0e0] dark:border-[#262626] ${className}`}
@@ -120,8 +118,7 @@ export function Callout({
   text?: string;
   children?: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"div">): React.ReactElement {
   return (
     <div
       className={`bg-[#f7f7f7] dark:bg-[#1a1a1a] text-[#555555] dark:text-[#a1a1a1] flex items-start p-3 my-6 text-base border border-[#e0e0e0] dark:border-[#262626] rounded-md ${className}`}
@@ -146,8 +143,7 @@ export function Code({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"code">): React.ReactElement {
   return (
     <code
       className={`
@@ -181,8 +177,7 @@ export function Em({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"em">): React.ReactElement {
   return (
     <em
       className={`italic text-[#555555] dark:text-[#a1a1a1] ${className}`}
@@ -210,8 +205,7 @@ export function Figure({
   children: React.ReactNode;
   wide?: boolean;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"div">): React.ReactElement {
   return (
     <div
       className={`text-center ${className} ${wide ? `
@@ -241,7 +235,7 @@ export function Figure({
  * The component renders a horizontal line with a gray color and a navigation bar with links to the home page, experiments page, words page, contact page, and CV page.
  * @returns {React.ReactElement} A reusable footer component that styles its children with a max-width container, a margin bottom, and a centered text alignment.
  */
-export function Footer({ ...props }: { [key: string]: any }): React.ReactElement {
+export function Footer({ ...props }: ComponentPropsWithoutRef<"footer">): React.ReactElement {
   return (
     <>
       <footer
@@ -268,7 +262,7 @@ export function Footer({ ...props }: { [key: string]: any }): React.ReactElement
             <ul className="flex justify-center sm:gap-4 gap-2">
               <li><A href="/" className="btn">Home</A></li>
               <li><A href="/#experiments" className="btn">Experiments</A></li>
-              <li><A href="/#words" className="btn">Words</A></li>
+              <li><A href="/words" className="btn">Words</A></li>
             </ul>
             <ul className="flex justify-center sm:gap-4 gap-2">
               <li><A href="/#contact" className="btn">Contact</A></li>
@@ -298,8 +292,7 @@ export function H1({
   children: React.ReactNode;
   id?: string;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"h1">): React.ReactElement {
   return (
     <h1
       id={id}
@@ -328,8 +321,7 @@ export function H2({
   children: React.ReactNode;
   id?: string;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"h2">): React.ReactElement {
   return (
     <h2
       id={id}
@@ -358,8 +350,7 @@ export function H3({
   children: React.ReactNode;
   id?: string;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"h3">): React.ReactElement {
   return (
     <h3
       id={id}
@@ -387,8 +378,7 @@ export function Header({
   className?: string;
   left?: React.ReactNode;
   right?: React.ReactNode;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"header">): React.ReactElement {
   const ulClassName = "bread mb-4 pl-8 list-none list-outside text-[#555555] dark:text-[#a1a1a1] space-y-[0px] !gap-0 sm:!gap-1";
   return (
     <header>
@@ -424,8 +414,7 @@ export function HR({
   ...props
 }: {
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"div">): React.ReactElement {
   return (
     <div
       className={`my-8 text-center after:content-['﹡﹡﹡'] after:text-sm after:text-center after:inline text-[#555555] dark:text-[#a1a1a1] ${className}`}
@@ -456,20 +445,19 @@ export function Icon({
   className?: string;
   href?: string;
   size?: "sm" | "lg" | "xl" | "2xl";
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"a">): React.ReactElement {
   return (
     <a
       className="bg-transparent border-none text-[var(--text-primary)] cursor-pointer no-underline rounded-full ring-offset-[var(--bg-primary)] transition-colors flex items-center justify-center w-fit h-fit p-[4px] hover:bg-black/10 dark:hover:bg-white/10"
       href={href || ""}
       target={href ? "_blank" : "_self"}
       rel={href ? "noopener noreferrer" : undefined}
+      {...props}
     >
       <FontAwesomeIcon
         icon={icon}
         className={className}
         size={size}
-        {...props}
       />
     </a>
   );
@@ -487,8 +475,7 @@ export function LI({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"li">): React.ReactElement {
   return (
     <li
       className={`${className}
@@ -513,8 +500,7 @@ export function OL({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"ol">): React.ReactElement {
   return (
     <ol
       className={`mb-4 pl-8 list-decimal list-outside text-[#555555] dark:text-[#a1a1a1] ${className}`}
@@ -539,8 +525,7 @@ export function P({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"p">): React.ReactElement {
   return (
     <p
       className={`mb-2 text-[#555555] dark:text-[#a1a1a1] leading-[1.6] ${className}`}
@@ -569,8 +554,7 @@ export function Section({
   children: React.ReactNode;
   className?: string;
   id?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"section">): React.ReactElement {
   return (
     <section
       id={id}
@@ -630,8 +614,7 @@ export function Strong({
   ...props
 }: {
   children: React.ReactNode;
-  [key: string]: any;
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"strong">): React.ReactElement {
   return (
     <strong {...props}>
       {children}
@@ -654,8 +637,7 @@ export function UL({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any
-}): React.ReactElement {
+} & ComponentPropsWithoutRef<"ul">): React.ReactElement {
   return <ul
     className={`mb-4 pl-8 list-disc list-outside text-[#555555] dark:text-[#a1a1a1] space-y-2 ${className}`}
     {...props}

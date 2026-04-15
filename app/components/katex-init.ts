@@ -16,7 +16,7 @@ declare global {
    * It is declared globally so that it can be accessed from anywhere in the application.
    */
   interface Window {
-    renderMathInElement: (element: HTMLElement, options: any) => void;
+    renderMathInElement: (element: HTMLElement, options: unknown) => void;
   }
 }
 
