@@ -8,6 +8,7 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import type { ComponentPropsWithoutRef } from "react";
 
 /**
  * A reusable CVSection component that displays a title with uppercase letters and children below it,
@@ -18,7 +19,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
  */
 export const CVSection = ({
   title, children, ...props
-}: { title: string; children: React.ReactNode;[key: string]: any }): React.ReactElement => (
+}: { title: string; children: React.ReactNode; } & ComponentPropsWithoutRef<typeof Section>): React.ReactElement => (
   <Section {...props}>
     <H2 className="uppercase">{title}</H2>
     <div className="space-y-4">
@@ -57,8 +58,7 @@ export const CVEntry = ({
   subtitleMobile?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
-  [key: string]: any;
-}) => {
+} & Omit<ComponentPropsWithoutRef<"div">, "title">) => {
   const titleClass = "!mt-0 !mb-0 !leading-[1.2] md:!mb-[0.3em] sm:!mb-[0.1em]";
   const titleElement = <>
     <H3 className={`
@@ -112,8 +112,7 @@ export const Language = ({
 }: {
   lang: string;
   level: string;
-  [key: string]: any;
-}): React.ReactElement => (
+} & ComponentPropsWithoutRef<"div">): React.ReactElement => (
   <div className="flex flex-col" {...props}>
     <H3 className="!mt-0 !mb-0 !leading-[1.2] !mb-[0.3em]">
       {lang}
@@ -142,8 +141,7 @@ export const Contact = ({
   href: string;
   text?: string;
   icon?: IconProp;
-  [key: string]: any;
-}): React.ReactElement => (
+} & Omit<ComponentPropsWithoutRef<typeof A>, "children">): React.ReactElement => (
   <A
     className="border-none w-fit btn"
     href={href}

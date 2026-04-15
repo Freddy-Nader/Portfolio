@@ -450,7 +450,7 @@ function isDevRunning(): boolean {
     // Check for a 'next' process that contains the root directory in its command line
     const output = execSync(`ps -ax -o pid,args | grep "next dev" | grep "${ROOT_DIR}" | grep -v grep`).toString();
     return output.trim().length > 0;
-  } catch (e) {
+  } catch {
     return false;
   }
 }
@@ -485,11 +485,11 @@ function getRunningPort(): number | null {
             }
           }
         }
-      } catch (e) {
+      } catch {
         // ignore errors for individual processes (e.g., permission denied)
       }
     }
-  } catch (e) {
+  } catch {
     // ignore
   }
   return null;
@@ -527,7 +527,7 @@ async function main() {
       fs.copyFileSync(PDF_OUT, PUBLIC_PDF);
       console.log(`Moved PDF to ${PUBLIC_PDF}`);
     }
-  } catch (e) {
+  } catch {
     console.error("Error compiling LaTeX. Make sure you have latexmk installed.");
   }
 

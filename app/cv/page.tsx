@@ -133,13 +133,13 @@ export default function CV() {
             title="Personal Portfolio Website"
             date="Dec 2025 — Present"
           >
-            I needed a place to display all my work, experiences, and blog entries. That's why I created my portfolio website. It has been the perfect place to practice web design and development, UX, and copywriting. The website is hosted at <A href="https://www.anader.xyz">anader.xyz</A>.
+            I needed a place to display all my work, experiences, and blog entries. That&apos;s why I created my portfolio website. It has been the perfect place to practice web design and development, UX, and copywriting. The website is hosted at <A href="https://www.anader.xyz">anader.xyz</A>.
           </CVEntry>
           <CVEntry
             title="Ampl"
             date="Aug 2025 — Present"
           >
-            Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for something you're not getting the most out of. Ampl fixes that: it lets you use all AI models with a pay-as-you-go pricing model, so you stop paying for what you're not using!
+            Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for something you&apos;re not getting the most out of. Ampl fixes that: it lets you use all AI models with a pay-as-you-go pricing model, so you stop paying for what you&apos;re not using!
           </CVEntry>
           <CVEntry
             title="estudio.so"
