@@ -1,10 +1,8 @@
-"use client"
-
 import { readFile } from "fs/promises";
 import sizeOf from "image-size";
 import NextImage from "next/image";
 import { join } from "path";
-import { Caption } from "./utils";
+import { Caption } from "../utils";
 
 /**
  * A wrapper around the NextImage component that handles data URLs and resizes images.

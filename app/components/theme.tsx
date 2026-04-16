@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { 
+import {
   useTheme,
   ThemeProvider as NextThemesProvider
 } from "next-themes"
@@ -48,6 +48,11 @@ export function ThemeToggle() {
   return null
 }
 
+/**
+ * A toggle switch component that allows users to switch between light and dark themes.
+ * Renders a button with sun and moon icons representing the current theme state.
+ * @returns {React.ReactElement} A theme toggle switch button with appropriate accessibility attributes.
+ */
 export function ThemeSwitch() {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)

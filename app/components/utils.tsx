@@ -1,5 +1,3 @@
-"use client"
-
 import { Children, ReactNode } from "react";
 import Balancer from "react-wrap-balancer";
 
