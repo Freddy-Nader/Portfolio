@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { A } from "./a";
-import { Icon } from "./icon";
+import { Icon } from "./icons";
 import { LI } from "./li";
 import { Strong } from "./strong";
 
