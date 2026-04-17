@@ -9,6 +9,11 @@
       "permanent": true
     },
     {
+      "source": "/blog",
+      "destination": "/words",
+      "permanent": true
+    },
+    {
       "source": "/partitions",
       "destination": "/f/2401.04026v1.pdf",
       "permanent": true

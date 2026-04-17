@@ -22,7 +22,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`max-w-[680px] mx-auto mb-12 max-sm:mb-8 ${className}`}
+      className={`mb-12 max-sm:mb-8 ${className}`}
       {...props}
     >
       {children}

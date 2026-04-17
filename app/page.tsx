@@ -1,18 +1,10 @@
-"use client"
-
-import {
-  A,
-  Em,
-  H1,
-  H3,
-  Header,
-  LI,
-  P,
-  Section,
-  Strong,
-  UL,
-  Icon,
-} from "@/app/components/elements";
+import { A } from "@/app/components/elements/a";
+import { Em } from "@/app/components/elements/em";
+import { H1 } from "@/app/components/elements/h1";
+import { H3 } from "@/app/components/elements/h3";
+import { Header } from "@/app/components/elements/header";
+import { P } from "@/app/components/elements/p";
+import { Section } from "@/app/components/elements/section";
 import { Contact } from "@/app/cv/elements";
 
 // FontAwesome Icons
@@ -33,7 +25,7 @@ export default function Home() {
       <main>
         <Section className="mt-12">
           <A href="/">
-            <H1 id="me">Hi, I'm Freddy</H1>
+            <H1 id="me">Hi, I&apos;m Freddy</H1>
           </A>
           <P>I am a Mexican Computer Science student.</P>
           <P>I <Em>love</Em> pure math, programming, and learning new things.</P>
@@ -70,13 +62,15 @@ export default function Home() {
           <div className="block">
             <H3>Ampl</H3>
             <P>Generative AI tools such as ChatGPT, Gemini, and Claude are great… but they all have a flaw: you pay for
-              something you're not getting the most out of. That's why I am developing <Em>Ampl</Em>. It lets you use
-              all AI models with a pay-as-you-go pricing model, so you stop paying for what you're not using!</P>
+              something you&apos;re not getting the most out of. That&apos;s why I am developing <Em>Ampl</Em>. It lets you use
+              all AI models with a pay-as-you-go pricing model, so you stop paying for what you&apos;re not using!</P>
           </div>
         </Section>
 
         <Section>
-          <H1 id="words">Words</H1>
+          <A href="/words">
+            <H1 id="words">Words</H1>
+          </A>
 
           <div className="block">
             <H3 className="external-link">
@@ -95,13 +89,13 @@ export default function Home() {
               published
             </A> as a preprint on arXiv, such a formula is developed using combinatorial methods. The methods
             used have implications over other similar functions, such as <A href="https://en.wikipedia.org/wiki/Spt_function">
-              Andrews' smallest parts (spt) function
+              Andrews&apos; smallest parts (spt) function
             </A>, and new identities for <A href="https://en.wikipedia.org/wiki/Jordan%27s_totient_function">
-              Jordan's totient function
+              Jordan&apos;s totient function
             </A> of second order, <A href="https://en.wikipedia.org/wiki/Euler%27s_totient_function">
-              Euler's totient function
+              Euler&apos;s totient function
             </A>, and <A href="https://en.wikipedia.org/wiki/Dedekind_psi_function">
-              Dedekind's psi function
+              Dedekind&apos;s psi function
             </A>.
           </P>
         </Section>
@@ -112,23 +106,19 @@ export default function Home() {
             <Contact
               href="mailto:alfredonaderz@gmail.com"
               text="alfredonaderz@gmail.com"
-              icon={faEnvelope}
-            />
+              icon={faEnvelope} />
             <Contact
               href="tel:+525525307307"
               text="+52 55 2530 7307"
-              icon={faPhone}
-            />
+              icon={faPhone} />
             <Contact
               href="https://github.com/Freddy-Nader"
               text="Freddy-Nader"
-              icon={faGithub}
-            />
+              icon={faGithub} />
             <Contact
               href="https://www.linkedin.com/in/alfredo-nader/"
               text="Alfredo-Nader"
-              icon={faLinkedin}
-            />
+              icon={faLinkedin} />
           </div>
         </Section>
       </main>

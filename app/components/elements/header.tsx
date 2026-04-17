@@ -1,9 +1,9 @@
 import { ComponentPropsWithoutRef } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { A } from "./a";
-import { Strong } from "./strong";
-import { LI } from "./li";
 import { Icon } from "./icon";
+import { LI } from "./li";
+import { Strong } from "./strong";
 
 /**
  * A header component that wraps its children in a max-width container.
@@ -27,12 +27,12 @@ export function Header({
     <header>
       <nav
         aria-label="Primary"
-        className={`max-w-[680px] py-8 mx-auto flex flex-row justify-between items-start gap-4 ${className}`}
+        className={`py-8 flex flex-row justify-between items-start gap-4 ${className}`}
         {...props}
       >
         <nav className="bread">
           <ul className={ulClassName}>
-            <li className="mb-2"><A className="btn" href="/"><Strong>Alredo Nader</Strong></A></li>
+            <li><A className="btn" href="/"><Strong>Alredo Nader</Strong></A></li>
             {left}
           </ul>
         </nav>

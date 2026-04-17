@@ -156,6 +156,7 @@
 }
 
 @layer base {
+
     /**
      * Applies default border, outline, and ring styles to all elements.
      * This is a utility class that can be applied to any element to give it a default
@@ -210,7 +211,7 @@
     border: none;
     color: var(--text-primary);
     cursor: pointer;
-    transform: translate(-4px, 0);
+    transform: translateX(-5px);
     text-decoration: none;
     border-bottom: none;
     border-radius: 8px;

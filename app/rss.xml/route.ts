@@ -1,7 +1,12 @@
-import posts from "@/app/words/db.json";
+import { getPosts } from "@/lib/get-posts";
 
 const SITE_URL = "https://anader.xyz";
 
+/**
+ * Escapes special XML characters in a string to prevent XML injection.
+ * @param value - The string to escape.
+ * @returns The escaped string with XML special characters replaced with their entity equivalents.
+ */
 function escapeXml(value: string) {
   return value
     .replaceAll("&", "&amp;")
@@ -11,10 +16,14 @@ function escapeXml(value: string) {
     .replaceAll("'", "&apos;");
 }
 
-export function GET() {
+/**
+ * Generates and returns an RSS feed containing all blog posts.
+ * @returns A Response object containing the RSS XML feed with appropriate headers for caching and content type.
+ */
+export async function GET() {
+  const posts = await getPosts();
   const items = posts.map((post) => {
-    const slug = post.link.startsWith("/") ? post.link : `/${post.link}`;
-    const summary = post.rawSummary === "..." ? "" : post.rawSummary;
+    const slug = `/words/${new Date(post.date).getFullYear()}/${post.id}`;
     const pubDate = new Date(post.date).toUTCString();
 
     return `
@@ -23,7 +32,7 @@ export function GET() {
         <link>${SITE_URL}${slug}</link>
         <guid>${SITE_URL}${slug}</guid>
         <pubDate>${pubDate}</pubDate>
-        <description>${escapeXml(summary)}</description>
+        <description>${escapeXml(post.title)}</description>
       </item>`;
   }).join("");
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@/app/components/analytics";
 import { KatexInit } from "@/app/components/katex-init";
 import { HeadKatex } from "@/app/components/head-katex"
-import { Footer } from "@/app/components/elements"
+import { Footer } from "@/app/components/elements/footer";
 import "@/app/globals.css";
 
 /**
@@ -80,21 +80,15 @@ export default function RootLayout({
         <HeadKatex />
       </head>
       <body
-        className="bg-[var(--bg-color)] text-[color:var(--text-primary)] font-[var(--font-stack)] leading-relaxed text-base text-foreground transition-colors duration-300 ease-in-out antialiased"
+        className="bg-[var(--bg-color)] text-[color:var(--text-primary)] font-[var(--font-stack)] leading-relaxed text-base text-foreground transition-colors duration-300 ease-in-out antialiased min-h-screen flex flex-col"
       >
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WS2F5Q3W"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <KatexInit />
-        <div className="px-8 py-4">
-          {children}
+        <div className="max-w-[720px] mx-auto px-8 my-4 w-full flex flex-col flex-1">
+          <div className="flex-1">
+            {children}
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </body>
     </html>
   );

@@ -65,21 +65,14 @@ interface CVData {
 function generateTSX(data: CVData): string {
   return `"use client"
 
-import {
-  A,
-  H1,
-  Header,
-  LI,
-  P,
-  Section,
-  UL,
-} from "@/app/components/elements";
-import {
-  CVSection,
-  CVEntry,
-  Language,
-  Contact,
-} from "@/app/cv/elements";
+import { A } from "@/app/components/elements/a";
+import { H1 } from "@/app/components/elements/h1";
+import { Header } from "@/app/components/elements/header";
+import { LI } from "@/app/components/elements/li";
+import { P } from "@/app/components/elements/p";
+import { UL } from "@/app/components/elements/ul";
+import { Section } from "@/app/components/elements/section";
+import * as CV from "@/app/cv/elements";
 
 // FontAwesome Icons
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -93,7 +86,7 @@ library.add(faGithub, faLinkedin, faEarthAmericas, faEnvelope, faPhone);
  * experience, research publications, honors and awards, projects, certifications, and contact
  * information.
  */
-export default function CV() {
+export default function CVPage() {
   return (
     <>
       <Header
@@ -113,44 +106,44 @@ export default function CV() {
           <P className="y-[-4em]">${data.location}</P>
         </Section>
 
-        <CVSection title="Education">
+        <CV.CVSection title="Education">
 ${data.education
       .map(
-        (edu) => `          <CVEntry
+        (edu) => `          <CV.CVEntry
             title="${edu.title}" ${edu.titleMobile ? `titleMobile="${edu.titleMobile}"` : ""}
             date="${edu.date}"
             subtitle="${edu.institution}" ${edu.institutionMobile ? `subtitleMobile="${edu.institutionMobile}"` : ""}
           />`
       )
       .join("\n")}
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Skills and Interests">
-          <CVEntry title="Skills">
+        <CV.CVSection title="Skills and Interests">
+          <CV.CVEntry title="Skills">
             ${data.skillsInterests.skills.join(", ")}
-          </CVEntry>
-          <CVEntry title="Interests">
+          </CV.CVEntry>
+          <CV.CVEntry title="Interests">
             ${data.skillsInterests.interests.join(", ")}
-          </CVEntry>
-          <CVEntry title="Programming Languages">
+          </CV.CVEntry>
+          <CV.CVEntry title="Programming Languages">
             ${data.skillsInterests.programmingLanguages.join(", ")}
-          </CVEntry>
-        </CVSection>
+          </CV.CVEntry>
+        </CV.CVSection>
 
-        <CVSection title="Languages">
+        <CV.CVSection title="Languages">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 ${data.languages
       .map(
-        (lang) => `            <Language lang="${lang.name}" level="${lang.level}" />`
+        (lang) => `            <CV.Language lang="${lang.name}" level="${lang.level}" />`
       )
       .join("\n")}
           </div>
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Experience">
+        <CV.CVSection title="Experience">
 ${data.experience
       .map(
-        (exp) => `          <CVEntry
+        (exp) => `          <CV.CVEntry
             title={<span>${exp.title.replace(
           /at (.*)/,
           `at <A href="${exp.url}">$1</A>`
@@ -160,12 +153,12 @@ ${data.experience
             <UL>
 ${exp.points.map((p) => `              <LI>${p}</LI>`).join("\n")}
             </UL>
-          </CVEntry>`
+          </CV.CVEntry>`
       )
       .join("\n")}
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Research Publication">
+        <CV.CVSection title="Research Publication">
 ${data.research
       .map(
         (res) => `          <div className="text-[#555555] dark:text-[#a1a1a1]">
@@ -173,24 +166,24 @@ ${data.research
           </div>`
       )
       .join("\n")}
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Honors and Awards">
+        <CV.CVSection title="Honors and Awards">
 ${data.honors
       .map(
-        (hon) => `          <CVEntry
+        (hon) => `          <CV.CVEntry
             title="${hon.title}"
             date="${hon.date}"
             subtitle="${hon.issuer}"
           />`
       )
       .join("\n")}
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Projects">
+        <CV.CVSection title="Projects">
 ${data.projects
       .map(
-        (proj) => `          <CVEntry
+        (proj) => `          <CV.CVEntry
             title="${proj.title}"
             date="${proj.date}"
           >
@@ -198,15 +191,15 @@ ${data.projects
           /anader\.xyz/,
           `<A href="https://www.anader.xyz">anader.xyz</A>`
         )}
-          </CVEntry>`
+          </CV.CVEntry>`
       )
       .join("\n")}
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Certifications">
+        <CV.CVSection title="Certifications">
 ${data.certifications
       .map(
-        (cert) => `          <CVEntry
+        (cert) => `          <CV.CVEntry
             className="external-link"
             title={<A href="${cert.url}">
               ${cert.title}
@@ -216,41 +209,41 @@ ${data.certifications
           />`
       )
       .join("\n")}
-        </CVSection>
+        </CV.CVSection>
 
-        <CVSection title="Contact" id="contact">
+        <CV.CVSection title="Contact" id="contact">
           <div className="flex flex-col">
-            <Contact
+            <CV.Contact
               href="mailto:${data.contact.email}"
               text="${data.contact.email}"
               icon={faEnvelope}
             />
 ${data.contact.phone
       .map(
-        (phone) => `            <Contact
+        (phone) => `            <CV.Contact
               href="tel:${phone.value}"
               text="${phone.print}"
               icon={faPhone}
             />`
       )
       .join("\n")}
-            <Contact
+            <CV.Contact
               href="https://www.${data.contact.website}"
               text="${data.contact.website}"
               icon={faEarthAmericas}
             />
-            <Contact
+            <CV.Contact
               href="https://github.com/${data.contact.github}"
               text="${data.contact.github}"
               icon={faGithub}
             />
-            <Contact
+            <CV.Contact
               href="https://www.linkedin.com/in/${data.contact.linkedin.username}/"
               text="${data.contact.linkedin.name}"
               icon={faLinkedin}
             />
           </div>
-        </CVSection>
+        </CV.CVSection>
       </main >
     </>
   );

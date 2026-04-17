@@ -13,7 +13,7 @@ export function Footer({ ...props }: ComponentPropsWithoutRef<"footer">): React.
   return (
     <>
       <footer
-        className="max-w-[680px] mx-auto mb-[64px] max-sm:mb-[56px] text-center place-content-around"
+        className="mb-[64px] max-sm:mb-[56px] text-center place-content-around"
         {...props}
       >
         <div className="overflow-hidden mb-4">
@@ -35,11 +35,8 @@ export function Footer({ ...props }: ComponentPropsWithoutRef<"footer">): React.
           <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-4 gap-0">
             <ul className="flex justify-center sm:gap-4 gap-2">
               <li><A href="/" className="btn">Home</A></li>
-              <li><A href="/#experiments" className="btn">Experiments</A></li>
-              <li><A href="/words" className="btn">Words</A></li>
-            </ul>
-            <ul className="flex justify-center sm:gap-4 gap-2">
               <li><A href="/#contact" className="btn">Contact</A></li>
+              <li><A href="/words" className="btn">Words</A></li>
               <li><A href="/cv" className="btn">CV</A></li>
             </ul>
           </div>

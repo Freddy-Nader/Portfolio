@@ -1,10 +1,8 @@
-import {
-  A,
-  H2,
-  H3,
-  P,
-  Section,
-} from "@/app/components/elements";
+import { A } from "@/app/components/elements/a";
+import { H2 } from "@/app/components/elements/h2";
+import { H3 } from "@/app/components/elements/h3";
+import { P } from "@/app/components/elements/p";
+import { Section } from "@/app/components/elements/section";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
